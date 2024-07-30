@@ -107,15 +107,22 @@ h2 { margin-top: 0; }
 .tm-page-nav-item { margin-top: 20px; }
 
 .tm-page-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-width: 240px;
     height: 100px;
     background-color: white;
     color: #099;
-    display: flex;
     text-decoration: none;
     align-items: center;
     font-size: 1.2rem;
 }
+/*.tm-tab-link {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*}*/
 
 .tm-page-link:hover,
 .tm-page-link.active {
@@ -199,7 +206,7 @@ h2 { margin-top: 0; }
 .tm-site-footer { margin-top: 15px; }
 
 .tm-footer-text {
-    padding: 10px 65px 10px 20px;
+    padding: 10px 20px 10px 20px;
     display: inline-block;
 }
 
