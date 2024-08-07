@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,26 +17,43 @@ class homeController extends Controller
         return view('home.index');
     }
 
+    public function getRussianMenu()
+    {
+        // Все блюда русской и интернациональной кухни
+        $menus = Menu::query()
+            ->where('active', '=', true)
+            ->where((function(Builder $query){
+                $query->where('cuisine_id', 'RUS')
+                    ->orWhere('cuisine_id', 'ALL');
+            }))
+            ->get();
+        $salads = $menus->where('category_id', '=', "SALAD");
+        $mains = $menus->where('category_id', '=', "MAIN");
+        $soups = $menus->where('category_id', '=', "SOUP");
+
+        return view('home.show-menu', compact(['salads', 'mains', 'soups', 'menus']));
+    }
+    public function getThaiMenu()
+    {
+        // Все блюда тайской и интернациональной кухни
+        $menus = Menu::query()
+            ->where('active', '=', true)
+            ->where((function(Builder $query){
+                $query->where('cuisine_id', 'THAI')
+                    ->orWhere('cuisine_id', 'ALL');
+            }))
+            ->get();
+        $salads = $menus->where('category_id', '=', "SALAD");
+        $mains = $menus->where('category_id', '=', "MAIN");
+        $soups = $menus->where('category_id', '=', "SOUP");
+
+        return view('home.show-menu', compact(['salads', 'mains', 'soups', 'menus']));
+    }
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function login(Request $request)
     {
-        $validatedData = $request->validate([
-            'email' => ['required', 'string', 'max:50', 'email', 'exists:users,email'], // проверка что в базе есть такой e-mail в таблице users
-            'password' => ['required', 'string', 'min:5', 'max:50'], // проверка пароля и сравнение его с password_confirmation
-        ]);
-        // dd($validatedData);
-
-        if (auth('web')->attempt($validatedData)) {
-            $messageString = "Добро пожаловать / ยินดีต้อนรับ " . Auth::user()->name . ".";
-            alert(__($messageString), 'success');
-            return redirect()->route('user.posts.index');
-        } else {
-            alert(__('Вход не выполнен'), 'danger');
-            return redirect()->route('login');
-        };
-
-        return redirect()->route('blog.index');
+        //
     }
 }

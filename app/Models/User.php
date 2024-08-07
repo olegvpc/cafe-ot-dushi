@@ -25,7 +25,7 @@ class User extends Authenticatable
     ];
     protected $fillable = [
         'name', 'email', 'avatar',
-        'active', 'password'
+        'active', 'admin', 'password',
     ];
 
     /**
@@ -46,8 +46,8 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-//            'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'admin' => 'boolean',
         ];
     }
 // добавление возможности Eloquent

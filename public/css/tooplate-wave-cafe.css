@@ -15,6 +15,7 @@ body {
     font-size: 18px;
     overflow-x: hidden;
     background-color: #1E5050;
+    max-width: 1680px;
 }
 
 ul {
@@ -88,6 +89,12 @@ h2 { margin-top: 0; }
     background-color: transparent;
 }
 
+.tm-site-image {
+    margin-right: 30px;
+    width: 500px;
+    background-color: transparent;
+}
+
 .tm-site-name {
     font-size: 2.2rem;
     font-style: italic;
@@ -118,18 +125,15 @@ h2 { margin-top: 0; }
     align-items: center;
     font-size: 1.2rem;
 }
-/*.tm-tab-link {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*}*/
 
 .tm-page-link:hover,
 .tm-page-link.active {
     background-color: #099;
     color: white;
 }
-
+.tm-page-link:hover.disable {
+    opacity: 20;
+}
 .tm-page-link-icon {
     margin-right: 25px;
     margin-left: 25px;

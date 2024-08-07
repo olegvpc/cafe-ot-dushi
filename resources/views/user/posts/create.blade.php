@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 {{-- если кода мало в секции, то можно написать контент вторым параметром в секции --}}
-@section('page.title', 'Create post')
+@section('page.title', 'Create menu')
 
 @section('main.content')
 

@@ -1,7 +1,10 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Cuisine;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 
 if(! function_exists('test')) {
@@ -34,27 +37,44 @@ if(! function_exists('validate')) {
 }
 
 if(! function_exists('__money')) {
-    function __money(string $amount, string $currencyId): string {
-        $currencyIcon = '';
-        switch ($currencyId) {
-            case 'USD':
-                $currencyIcon = '$';
-                break;
-            case 'RUB':
-                $currencyIcon = 'R';
-                break;
-            case 'BTC':
-                $currencyIcon = 'B';
-                break;
-            default:
-                $currencyIcon = '?';
-//                throw ValidationException::withMessages([
-//                'currency_error' => __('Не определена валюта'),
-//                ]);
-        }
+    function __money(string $amount): string {
+
         // dd(session('currency_error'));
-        $value = number_format($amount, 2, '.', ' ');
-        return $value . ' ' . $currencyIcon;
+        $value = number_format($amount, 0, '.', ' ');
+        return $value;
+    }
+}
+
+
+if(! function_exists('getCateriesMenu')) {
+    function getCategoriesMenu(): array {
+        $categoriesList = Category::query()->orderBy('sort', 'asc')->get(['id', 'name'])->toArray();
+        //        dd($categories->toArray());
+        //        array:5 [▼ // app/Http/Controllers/User/MenuController.php:33
+        //  0 => array:2 [▼
+        //    "id" => "SALAD"
+        //    "name" => "Салат"
+        //  ]
+        //  1 => array:2 [▶]
+        //  2 => array:2 [▶]
+        //  3 => array:2 [▶]
+        //  4 => array:2 [▶]
+        $categories = [];
+        foreach ($categoriesList as $item) {
+            $categories [$item['id']] = $item['name'];
+        }
+        return $categories;
+    }
+}
+
+if(! function_exists('getAllCuisines')) {
+    function getAllCuisines(): array {
+        $cuiseneList = Cuisine::query()->orderBy('sort', 'asc')->get(['id', 'name'])->toArray();
+        $cuisines = [];
+        foreach ($cuiseneList as $item) {
+            $cuisines [$item['id']] = $item['name'];
+        }
+        return $cuisines;
     }
 }
 
@@ -68,3 +88,32 @@ if(! function_exists('transaction')) {
         return DB::transaction($callback, $attempts);
     }
 }
+
+if(! function_exists('saveImageIn')) {
+    function saveImageIn($request, string $folder): string
+    {
+        // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
+        $file = $request->file('image');
+        if ($file) {
+            $pathToImageString = $request->file('image')->storeAs($folder, $file->getClientOriginalName(), 'public');
+        } else {
+            $pathToImageString = 'images/no-image.jpeg';
+        }
+        return $pathToImageString;
+    }
+}
+
+if(! function_exists('checkAndDeleteImage')) {
+    function checkAndDeleteImage($imagePath): void
+    {
+        $imageMenuPath = Storage::path('/public/'.$imagePath);
+//        dd($imageMenuPath);
+// $imageMenuPath => "/var/www/html/storage/app/public/menu-images/круглый повар.png"
+// $deletedMenu->image => "menu-images/drinks-kompot.jpeg"
+        $firstItemOfPath = explode("/", $imagePath)[0];
+        if ($firstItemOfPath !== 'images' && Storage::exists('/public/'.$imagePath)) {
+            unlink($imageMenuPath);
+        }
+    }
+}
+

@@ -8,15 +8,10 @@
 
 {{--{{ dd($method, $_method) }}--}}
 
-{{--<form {{ $attributes }}>--}}
 
-{{--    @csrf--}}
-{{--    {{ $slot}}--}}
-{{--</form>--}}
-
-<form {{ $attributes }} method="{{ $_method ? $method : 'POST'}}">
+<form {{ $attributes }} method="{{ $_method ? $method : 'POST'}}" enctype="multipart/form-data">
     @if(! $_method)
-         <input type="hidden" name="_method" value="{{ $method }}">
+{{--         <input type="hidden" name="_method" value="{{ $method }}">--}}
         @method($method)
     @endif
 
@@ -24,5 +19,5 @@
         @csrf
     @endif
 
-    {{ $slot}}
+    {{ $slot }}
 </form>
