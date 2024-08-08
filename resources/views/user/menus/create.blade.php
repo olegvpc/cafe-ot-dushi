@@ -8,7 +8,7 @@
 
 
 	<x-title>
-		{{ __('Создание Блюда')}}
+		{{ __('Создание блюда / Create Dish')}}
 
 		<x-slot name='link'>
 			<a href="{{ route('user.menus.index') }}">

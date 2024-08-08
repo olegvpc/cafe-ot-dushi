@@ -35,6 +35,15 @@ class MenuSeeder extends Seeder
                 'image' => 'images/no-image.jpeg'
             ],
             [
+                'title' => 'Грибной крем суп / Mushroom cream soup',
+                'description' => 'Оригинальный крем суп из местных грибов с азиатским акцентом',
+                'price' => 110,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'SOUP',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
                 'title' => 'Салат Оливье/ Olivie salad',
                 'description' => 'Закусочный салат русской кухни из отварных корнеплодов, солёных огурцов, яиц с мясом или варёной колбасой в майонезной заправке.',
                 'price' => 80,
@@ -83,6 +92,15 @@ class MenuSeeder extends Seeder
                 'title' => 'Куриные контлеты с гарниром / Chicken patty - burger with side dish',
                 'description' => 'Классическая куриная котлета в панировке с гарниром на выбор',
                 'price' => 120,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Котлеты свиные с гарниром / Pork patty - burger with side dish',
+                'description' => 'Классическая котлета из свинины в панировке с гарниром на выбор',
+                'price' => 130,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'MAIN',
                 'active' => true,

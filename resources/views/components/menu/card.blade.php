@@ -5,7 +5,7 @@
         <div class="mb-2">
             <div class="card-footer">
                 <div class="btn-wrapper text-center d-flex justify-content-between">
-                    <a class="btn btn-success btn-sm text-white d-flex align-items-center {{ !(Auth::user()->admin) ? 'disabled' : '' }}"
+                    <a class="btn btn-warning btn-sm d-flex align-items-center {{ !(Auth::user()->admin) ? 'disabled' : '' }}"
                        href="{{ route('user.menus.edit', $menuItem->id) }}">
                         {{ __('Change') }}
                     </a>

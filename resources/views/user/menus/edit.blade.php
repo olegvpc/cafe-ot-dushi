@@ -6,7 +6,7 @@
 @section('main.content')
 
 	<x-title>
-		{{ __('Изменить Блюдо из меню')}}
+		{{ __('Изменить Блюдо из меню / Change dish from list')}}
 
 		<x-slot name='link'>
 			<a href="{{ route('user.menus.index', $menuItem->id) }}">
@@ -18,7 +18,7 @@
 
 	<!-- для пеедачи php переменной в компонент ставим двоеточие - иначе это будет props-->
 	<x-menu.form  action="{{ route('user.menus.update', $menuItem->id) }}" :menuItem="$menuItem" :categories="$categories" :cuisines="$cuisines" method="PUT">
-		{{ __('Сохранить изменения')}}
+		{{ __('Save')}}
 	</x-menu.form>
 
 

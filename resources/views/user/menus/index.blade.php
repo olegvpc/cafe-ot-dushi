@@ -7,10 +7,10 @@
 @section('main.content')
 
     <x-title>
-        {{ __('Список Меню')}}
+        {{ __('Список Меню / List of dishes')}}
         <x-slot name='right'>
             <x-button-link href="{{ route('user.menus.create') }}">
-                {{ __('Cоздать')}}
+                {{ __('Create')}}
             </x-button-link>
         </x-slot>
     </x-title>
@@ -19,7 +19,7 @@
 
     <div class="row">
         @if ($menus->isEmpty())
-            {{ __('Нет ни одного блюда') }}
+            {{ __('Нет ни одного блюда / No one') }}
         @else
             @foreach ($menus as $menuItem)
                 <!-- используем компонент для отображения блюд с условным переходом по props([from => ..])-->
