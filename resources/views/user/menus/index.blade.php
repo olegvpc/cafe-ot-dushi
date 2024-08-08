@@ -30,4 +30,7 @@
         @endif
     </div>
     @include('includes.filter')
+
+    {{--    выводим встренную в Laravel паджинацию--}}
+    {{ $menus->links() }}
 @endsection
