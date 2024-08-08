@@ -7,7 +7,7 @@
 ![home01](https://github.com/olegvpc/cafe-ot-dushi/blob/main/public/img/home-01.jpg?raw=true)
 #### 3: При развертывании проекта сидером формируется БД Юзеров, категорий (напитки, салаты, супы ...), кухни и базовое меню / When deploying a project as a cider, a database of Users, categories (drinks, salad, soup ...), cuisines and a basic menu is formed
 #### 4: Возможен вход с правами admin для корректировки меню (возможно добавить в настройки корректировку кухни и категорий) / You can log in with admin rights to adjust the menu (it is possible to add kitchen and category adjustments to the settings)
-![home-menu](https://github.com/olegvpc/cafe-ot-dushi/blob/main/public/img/home-menu.jpg![img.png](img.png).jpg?raw=true)
+![home-menu](https://github.com/olegvpc/cafe-ot-dushi/blob/main/public/img/home-menu.jpg?raw=true)
 
 
 
