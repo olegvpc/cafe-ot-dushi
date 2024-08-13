@@ -17,7 +17,7 @@
         </x-slot>
     </x-title>
 
-	<x-order.cancel-form action="{{ route('user.orders.delete', $order->id) }}" method="PUT" :order="$order">
+	<x-order.cancel-form action="{{ route('user.orders.delete', $order->id) }}" method="PUT">
 		{{ __('Подтвердить отмену заказа')}}
 	</x-order.cancel-form>
 

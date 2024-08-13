@@ -1,4 +1,4 @@
-@props(['order'=>null, 'menus'=>null, 'selectedMenus'=>null])
+@props(['order'=>null, 'menus'=>null, 'selectedMenus'=>null, 'categories'=>[]])
 @extends('layouts.main')
 
 {{-- если кода мало в секции, то можно написать контент вторым параметром в секции --}}
@@ -18,7 +18,9 @@
 		</x-slot>
 
 	</x-title>
-
+{{--    Filters for choice category (DRINK, MAIN, SALAD)--}}
+    <x-order.filter-menu-categories :order="$order" :categories="$categories"/>
+{{--    Section jf choise--}}
     <x-order.select :menus="$menus" :order="$order" :selectedMenus="$selectedMenus" />
 
 @endsection

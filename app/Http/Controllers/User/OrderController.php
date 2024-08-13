@@ -57,10 +57,7 @@ class OrderController extends Controller
                 }
                 $table->totalAmount = $totalAmount;
             }
-
         }
-
-          //dd($tables);
         return view('user.orders.index', compact(['tables']));
         //return 'Show';
 
@@ -72,16 +69,11 @@ class OrderController extends Controller
     public function createOrder(Request $request, $tableId)
     {
 //        $tableId = $request->input('table_id');
-//        $validated = $request->validate([
-//            'table_id' => ['required', 'string', Rule::exists('tables', 'id')->where('is_free', true)],
-//        ]);
-         // dd($tableId);
-//        $tables = Table::query()->get(['id'])->toArray();
-        // dd(in_array($tableId, $tables), $tableId, $tables));
-        // Проверить что приходит правильный id стола ('ONE', 'TWO'...)
-//        if () {
-//            //
-//        }
+        $validated = $request->validate([
+            'category' => ['nullable', 'string', Rule::exists('categories', 'id')],
+        ]);
+//          dd($validated);
+
         $table = Table::query()->findOrFail($tableId);
     // Если у стола уже прописан заказ, то берем его, если нету заказа, то создаем новый
         if ($table->order_id) {
@@ -92,8 +84,6 @@ class OrderController extends Controller
 
         try {
             DB::transaction(function () use ($table, $order, $tableId) {
-
-//                $order->menus = json_encode(["1003", "1006", "1009", "1008"]);
                 $order->table_id = $tableId;
                 $order->save();
 
@@ -107,8 +97,13 @@ class OrderController extends Controller
         } catch (\Exception $e) {
             throw $e;
         }
+        // Если есть фильтрация, то фильтруем из базы
+        $query = Menu::query();
+        if ($category = $validated['category'] ?? null) {
+            $query->where('category_id', $category);
+        }
+        $menus = $query->paginate(10);
 
-        $menus = Menu::query()->paginate(10);
         $orderMenusJson = $order->menus;
         $orderMenus = json_decode($orderMenusJson);
 //        dd($order, $orderMenus);
@@ -120,12 +115,10 @@ class OrderController extends Controller
             }
         }
 //        dd($selectedMenus);
-
+        $categories = array_keys(getCategoriesMenu());
 
         alert(__("Created order on a table: $tableId!"), 'primary');
-        return view('user.orders.create', compact(['order', 'menus', 'selectedMenus']));
-//        return redirect()->route('user.orders.index');
-        // return 'Created';
+        return view('user.orders.create', compact(['order', 'menus', 'selectedMenus', 'categories']));
     }
 
     public function add(Request $request, string $menuId)

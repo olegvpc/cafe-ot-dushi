@@ -1,7 +1,4 @@
-@props(["order"=>null])
-
 <x-errors />
-
 
 <x-form {{ $attributes->merge([
 	'method'=>'GET'

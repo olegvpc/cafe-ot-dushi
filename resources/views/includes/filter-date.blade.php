@@ -7,7 +7,7 @@
 
         <div class="col-12 col-md-4">
             <div class="mb-3">
-                <x-label required>{{ __('From Date') }}</x-label>
+                <x-label>{{ __('From Date') }}</x-label>
                 <x-input name='from_date' type="date" value="{{ request('from_date') }}" placeholder="{{ __('From Date')}}"/>
 
                 <x-error name='from_date' />
@@ -15,7 +15,7 @@
         </div>
         <div class="col-12 col-md-4">
             <div class="mb-3">
-                <x-label required>{{ __('To Date') }}</x-label>
+                <x-label>{{ __('To Date') }}</x-label>
                 <x-input name='to_date' type="date" value="{{ request('to_date') }}" placeholder="{{ __('To Date')}}"/>
 
                 <x-error name='to_date' />

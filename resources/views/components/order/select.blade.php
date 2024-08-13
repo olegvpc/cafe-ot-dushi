@@ -35,6 +35,7 @@
 <h3>
     {{ __('Selected dish / จานที่เลือก') }}
 </h3>
+
 {{--{{ dd($selectedMenus, empty($selectedMenus)) }}--}}
 @if(empty($selectedMenus))
     {{ __('No one selected') }}
