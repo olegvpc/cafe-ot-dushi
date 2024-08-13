@@ -16,8 +16,8 @@ class TableSeeder extends Seeder
         $tables = [
             [
                 'id' => 'ONE',
-                'is_free' => false,
-                'order_id' => 1,
+                'is_free' => true,
+                'order_id' => NULL,
                 'sort' => 1,
             ],
             [
@@ -28,8 +28,8 @@ class TableSeeder extends Seeder
             ],
             [
                 'id' => 'THREE',
-                'is_free' => false,
-                'order_id' => 2,
+                'is_free' => true,
+                'order_id' => NULL,
                 'sort' => 3,
             ],
             [
