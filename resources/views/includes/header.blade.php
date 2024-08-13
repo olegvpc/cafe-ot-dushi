@@ -11,8 +11,18 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 @auth('web')
                     <div class="nav-link">
-                        <a class="nav-link {{ Route::is('menus*') ? 'active' : '' }}" href="{{ route('user.menus.index') }}">
-                            {{ __("Меню") }}
+                        <a class="nav-link {{ Route::is('user.menus*') ? 'active' : '' }}" href="{{ route('user.menus.index') }}">
+                            {{ __("Menu") }}
+                        </a>
+                    </div>
+                    <div class="nav-link">
+                        <a class="nav-link {{ Route::is('user.orders*') ? 'active' : '' }}" href="{{ route('user.orders.index') }}">
+                            {{ __("Get Order") }}
+                        </a>
+                    </div>
+                    <div class="nav-link">
+                        <a class="nav-link" href="{{ route('user.report') }}">
+                            {{ __("Orders Report") }}
                         </a>
                     </div>
                 @endauth

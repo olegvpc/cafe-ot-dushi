@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\User\DonateController;
+
 use App\Http\Controllers\User\MenuController;
+use App\Http\Controllers\User\OrderController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
-use App\Http\Controllers\User\PostController;
+
 
 Route::redirect('/home', '/');
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -32,8 +33,6 @@ Route::middleware('guest')->group(function(){
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
-
 Route::middleware('auth')->group(function(){
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
@@ -45,6 +44,25 @@ Route::middleware('auth')->group(function(){
         Route::get('/menus/{menu}/edit', [MenuController::class, 'edit'])->name('user.menus.edit');
         Route::put('/menus/{menu}', [MenuController::class, 'update'])->name('user.menus.update');
         Route::delete('/menus/{menu}', [MenuController::class, 'delete'])->name('user.menus.delete');
+
+        // routers for orders
+        Route::get('/orders', [OrderController::class, 'index'])->name('user.orders.index');
+        // Созается order но без списка меню
+        Route::get('/orders/create/{order}', [OrderController::class, 'createOrder'])->name('user.orders.create');
+        // Добавление блюда список заказа (order)
+        Route::patch('/orders/{order}', [OrderController::class, 'add'])->name('user.orders.add');
+        // Удаление пункта меню из списка заказа (order)
+        Route::delete('/orders/destroy/{order}', [OrderController::class, 'destroy'])->name('user.orders.destroy');
+        // Показываем страницу с формой для комментария при ОБНУЛЕНИИ стола с заказом
+        Route::get('/orders/{order}', [OrderController::class, 'cancel'])->name('user.orders.cancel');
+        // Cancel заказа - выполнение
+        Route::put('/orders/{order}', [OrderController::class, 'delete'])->name('user.orders.delete');
+        // Сохраняется ВЫПОЛНЕНИЕ заказа список меню в order
+        Route::post('/orders/{order}', [OrderController::class, 'store'])->name('user.orders.store');
+
+        Route::get('/report', [OrderController::class, 'report'])->name('user.report');
+//        Route::put('/orders/{order}', [OrderController::class, 'update'])->name('user.orders.update');
+
     });
 });
 

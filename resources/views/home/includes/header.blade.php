@@ -10,19 +10,19 @@
             <ul class="tm-site-nav-ul">
                 <li class="tm-page-nav-item">
                     <a href="{{ route('home.russian-menu') }}" class="tm-page-link {{ active_link('home.russian-menu') }}">
-                        <span>Русское меню</span>
+                        <span>{{__('Russian cuisine') }}</span>
                         <span>อาหารรัสเซีย</span>
                     </a>
                 </li>
                 <li class="tm-page-nav-item">
                     <a href="{{ route('home.thai-menu') }}" class="tm-page-link {{ active_link('home.thai-menu') }}">
-                        <span>Тайское меню</span>
+                        <span>{{__('Thai cuisine') }}</span>
                         <span>อาหารไทย</span>
                     </a>
                 </li>
                 <li class="tm-page-nav-item">
                     <a href="{{ route('home.special-menu') }}" class="tm-page-link {{ active_link('home.special-menu') }}">
-                        <span>Комплексные обеды</span>
+                        <span>{{__('Special proposal') }}</span>
                         <span>ชุดอาหารกลางวัน</span>
                     </a>
                 </li>

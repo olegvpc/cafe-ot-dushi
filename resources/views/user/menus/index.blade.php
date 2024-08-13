@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 {{-- если кода мало в секции, то можно написать контент вторым параметром в секции --}}
-@section('page.title', 'Меню')
+@section('page.title', 'Munu')
 @php($alert = session()->get('alert'))
 
 @section('main.content')
@@ -15,11 +15,10 @@
         </x-slot>
     </x-title>
 
-{{--    @include('includes.filter')--}}
 
     <div class="row">
         @if ($menus->isEmpty())
-            {{ __('Нет ни одного блюда / No one') }}
+            {{ __('Нет ни одного блюда / No one dishes') }}
         @else
             @foreach ($menus as $menuItem)
                 <!-- используем компонент для отображения блюд с условным переходом по props([from => ..])-->

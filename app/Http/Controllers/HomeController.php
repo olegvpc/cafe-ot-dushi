@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class homeController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,11 +27,12 @@ class homeController extends Controller
                     ->orWhere('cuisine_id', 'ALL');
             }))
             ->get();
+        $drink = $menus->where('category_id', '=', "DRINK");
         $salads = $menus->where('category_id', '=', "SALAD");
         $mains = $menus->where('category_id', '=', "MAIN");
         $soups = $menus->where('category_id', '=', "SOUP");
 
-        return view('home.show-menu', compact(['salads', 'mains', 'soups', 'menus']));
+        return view('home.show-menu', compact(['drink', 'salads', 'mains', 'soups', 'menus']));
     }
     public function getThaiMenu()
     {
@@ -43,11 +44,12 @@ class homeController extends Controller
                     ->orWhere('cuisine_id', 'ALL');
             }))
             ->get();
+        $drink = $menus->where('category_id', '=', "DRINK");
         $salads = $menus->where('category_id', '=', "SALAD");
         $mains = $menus->where('category_id', '=', "MAIN");
         $soups = $menus->where('category_id', '=', "SOUP");
 
-        return view('home.show-menu', compact(['salads', 'mains', 'soups', 'menus']));
+        return view('home.show-menu', compact(['drink', 'salads', 'mains', 'soups', 'menus']));
     }
     /**
      * Store a newly created resource in storage.

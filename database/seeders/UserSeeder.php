@@ -34,6 +34,12 @@ class UserSeeder extends Seeder
                 'email' => 'nic@yandex.ru',
                 'password' => bcrypt('12345'),
                 'admin' => true
+            ],
+            [
+                'name' => 'Nin',
+                'email' => 'order@yandex.ru',
+                'password' => bcrypt('12345'),
+                'admin' => false
             ]
         ];
         foreach ($users as $user) {

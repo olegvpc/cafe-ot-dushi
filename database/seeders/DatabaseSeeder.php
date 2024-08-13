@@ -28,14 +28,18 @@ class DatabaseSeeder extends Seeder
                     UserSeeder::class,
                     CategorySeeder::class,
                     CuisineSeeder::class,
-                    MenuSeeder::class,
+                    DrinkMenuSeeder::class,
+                    SaladMenuSeeder::class,
+                    SoupMenuSeeder::class,
+                    MainMenuSeeder::class,
+                    SpecialMenuSeeder::class,
+                    TableSeeder::class,
+                    // OrderSeeder::class,
                 ]);
                 DB::commit();
             });
         } catch (\Exception $e) {
             throw $e;
         }
-
-
     }
 }

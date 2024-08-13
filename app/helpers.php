@@ -24,7 +24,7 @@ if(! function_exists('active_link')) {
 if(! function_exists('alert')) {
     function alert(string $text_alert, $alert_status = 'info')
     {
-        // dd($text_alert, $alert_status);
+        // dd($text_alert, $alert_status); 'primary'
         session(['alert' => $text_alert, 'alert_status' => $alert_status]);
     }
 }

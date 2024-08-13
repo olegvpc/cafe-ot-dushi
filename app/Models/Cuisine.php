@@ -17,10 +17,6 @@ class Cuisine extends Model
         'name', 'sort',
     ];
 
-    protected $casts = [
-//        'price' => 'float',
-    ];
-
     // добавление возможности Eloquent
     public function menus(): HasMany
     {
