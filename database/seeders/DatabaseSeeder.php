@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
                     SoupMenuSeeder::class,
                     MainMenuSeeder::class,
                     SpecialMenuSeeder::class,
+                    AlcoholMenuSeeder::class,
                     TableSeeder::class,
                     // OrderSeeder::class,
                 ]);

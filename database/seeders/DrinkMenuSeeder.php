@@ -13,7 +13,7 @@ class DrinkMenuSeeder extends Seeder
      */
     public function run(): void
     {
-        // Users/olegvpc/otdushi/cafe-ot-dushi/storage/app/public/menu-images/drinks-kompot.jpeg
+        // menu-images/drinks-kompot.jpeg
         // images/no-image.jpeg
         $drinks = [
             [
@@ -27,7 +27,7 @@ class DrinkMenuSeeder extends Seeder
             ],
             [
                 'title' => 'Айран / Airan',
-                'description' => 'Хорошо уталяет жажду}',
+                'description' => 'Хорошо уталяет жажду',
                 'price' => 30,
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'DRINK',

@@ -47,6 +47,11 @@ class CategorySeeder extends Seeder
                 'name' => 'Комплексные / Set / ชุด',
                 'sort' => 970
             ],
+            [
+                'id' => 'DESSERT',
+                'name' => 'Дессерт / Dessert / ขนม',
+                'sort' => 975
+            ],
         ];
 
         foreach ($categories as $category) {
