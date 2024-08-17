@@ -41,7 +41,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drinks-coca.jpeg'
+                'image' => 'menu-images/drink-coca.jpeg'
             ],
             [
                 'title' => 'Фанта / Fanta / แฟนต้า',
@@ -50,7 +50,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drinks-fanta.jpeg'
+                'image' => 'menu-images/drink-fanta.jpeg'
             ],
             [
                 'title' => 'Спрайт / Sprite / เทพดา',
@@ -59,7 +59,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drinks-sprite.jpeg'
+                'image' => 'menu-images/drink-sprite.jpeg'
             ],
             [
                 'title' => 'Вода / Water / น้ำ',
