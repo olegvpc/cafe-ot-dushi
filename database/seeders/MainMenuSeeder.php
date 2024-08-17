@@ -50,7 +50,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-chicken-liver.jpg'
             ],
             [
                 'title' => 'Пельмени со свининой / Dumplings with pork / เกี๊ยวหมู',
@@ -59,7 +59,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-pilmeni-pork.jpg'
             ],
             [
                 'title' => 'Пельмени с курицей / Dumplings with chicken / เกี๊ยวกับไก่',
@@ -68,7 +68,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-pilmeni.jpg'
             ],
             [
                 'title' => 'Жареный рис с криветками / Fried rice with shrimp / ข้าวผัดกุ้ง',

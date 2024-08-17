@@ -17,21 +17,21 @@ class SpecialMenuSeeder extends Seeder
         $specials = [
             [
                 'title' => 'Английский завтрак / English breakfast / อาหารเช้าแบบอังกฤษ',
-                'description' => '<ul><li>Жареные яйца / Fried egg</li><li>Тост / Toast</li><li>Ветчина и сосиски/ Ham and sausages</li><li>Напиток / Drink</li></ul>',
-                'price' => 150,
-                'cuisine_id' => 'ALL',
-                'category_id'=> 'SPECIAL',
-                'active' => true,
-                'image' => 'images/no-image.jpeg'
-            ],
-            [
-                'title' => 'Американский завтрак / American breakfast / อาหารเช้าแบบอเมริกัน',
                 'description' => '<ul><li>Жареные яйца / Fried egg</li><li>Тост / Toast</li><li>Ветчина и сосиски/ Ham and sausages</li><li>Картошка фри / French fries</li><li>Напиток / Drink</li></ul>',
                 'price' => 150,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'SPECIAL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/special-english.jpg'
+            ],
+            [
+                'title' => 'Американский завтрак / American breakfast / อาหารเช้าแบบอเมริกัน',
+                'description' => '<ul><li>Жареные яйца / Fried egg</li><li>Тост / Toast</li><li>Ветчина и сосиски/ Ham and sausages</li><li>Напиток / Drink</li></ul>',
+                'price' => 150,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'SPECIAL',
+                'active' => true,
+                'image' => 'menu-images/special-american.jpg'
             ],
             [
                 'title' => 'Русский завтрак / Russian breakfast / อาหารเช้าแบบรัสเซีย',
@@ -49,7 +49,7 @@ class SpecialMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'SPECIAL',
                 'active' => true,
-                'image' => 'menu-images/soup-borch.jpeg'
+                'image' => 'menu-images/special-01.jpg'
             ],
             [
                 'title' => 'Комплексный обед №2 / Set lunch №2 / ชุดอาหารกลางวัน 2',
@@ -58,7 +58,7 @@ class SpecialMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'SPECIAL',
                 'active' => true,
-                'image' => 'menu-images/special-01.jpg'
+                'image' => 'menu-images/special-02.jpg'
             ],
 
         ];

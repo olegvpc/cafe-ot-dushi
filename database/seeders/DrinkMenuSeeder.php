@@ -41,7 +41,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/drinks-coca.jpeg'
             ],
             [
                 'title' => 'Фанта / Fanta / แฟนต้า',
@@ -50,7 +50,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/drinks-fanta.jpeg'
             ],
             [
                 'title' => 'Спрайт / Sprite / เทพดา',
@@ -59,7 +59,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/drinks-sprite.jpeg'
             ],
             [
                 'title' => 'Вода / Water / น้ำ',
@@ -68,7 +68,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/drink-water.jpeg'
             ],
             [
                 'title' => 'Сок яблочный / Apple juice / น้ำแอปเปิ้ล',
@@ -77,7 +77,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/drink-apple.jpeg'
             ],
             [
                 'title' => 'Сок апельсиновый / Orange juice / น้ำส้ม',
@@ -86,7 +86,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/drink-orange.jpeg'
             ],
             [
                 'title' => 'Сок ананасовый / Pineapple juice / น้ำสับปะรด',
@@ -95,7 +95,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/drink-pinapple.jpeg'
             ],
         ];
         foreach ($drinks as $dish) {

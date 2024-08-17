@@ -23,7 +23,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'menu-images/.jpeg'
+                'image' => 'menu-images/drink-beer-chang.jpeg'
             ],
             [
                 'title' => 'Пиво Chang 0,3 / Beer Chang small / เบียร์ ลีโอ ใหญ่',
@@ -32,7 +32,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'menu-images/.jpeg'
+                'image' => 'menu-images/drink-beer-chang.jpeg'
             ],
             [
                 'title' => 'Пиво Leo 0,6 / Beer Leo big',
@@ -41,7 +41,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'menu-images/.jpeg'
+                'image' => 'menu-images/drink-beer-leo.jpeg'
             ],
             [
                 'title' => 'Пиво Leo 0,3 / Beer Leo small / เบียร์ ลีโอ เล็ก',
@@ -50,7 +50,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'menu-images/.jpeg'
+                'image' => 'menu-images/drink-beer-leo.jpeg'
             ],
             [
                 'title' => 'Пиво Singha 0,6 / Beer Singha big / เบียร์สิงห์ใหญ่',
@@ -59,7 +59,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'menu-images/.jpeg'
+                'image' => 'menu-images/drink-beer-singha.png'
             ],
             [
                 'title' => 'Пиво Singha 0,3 / Beer Singha small / เบียร์สิงห์ตัวเล็ก',
@@ -68,7 +68,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'menu-images/.jpeg'
+                'image' => 'menu-images/drink-beer-singha.png'
             ],
             [
                 'title' => 'Ром Sang Som / Rum Sang Som / แสงโสม',
@@ -77,7 +77,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'menu-images/.jpeg'
+                'image' => 'menu-images/drink-rum-samsong.jpeg'
             ],
 
         ];
