@@ -16,7 +16,7 @@ class SaladMenuSeeder extends Seeder
         // images/no-image.jpeg
         $salads = [
             [
-                'title' => 'Салат Оливье/ Olivie salad',
+                'title' => 'Салат Оливье/ Olivie salad / สลัดโอลิเวีย',
                 'description' => 'Закусочный салат русской кухни из отварных корнеплодов, солёных огурцов, яиц с мясом или варёной колбасой в майонезной заправке.',
                 'price' => 80,
                 'cuisine_id' => 'RUS',
@@ -25,7 +25,7 @@ class SaladMenuSeeder extends Seeder
                 'image' => 'menu-images/salad-olivie.jpeg'
             ],
             [
-                'title' => 'Салат из курицы / Chicken salad',
+                'title' => 'Салат из курицы / Chicken salad / สลัดไก่',
                 'description' => 'Салаты из курицы содержат очень много белка, а значит, их можно есть даже вечером.',
                 'price' => 100,
                 'cuisine_id' => 'ALL',
@@ -34,7 +34,7 @@ class SaladMenuSeeder extends Seeder
                 'image' => 'images/no-image.jpeg'
             ],
             [
-                'title' => 'Папая салат Som Tam / Papaya salad Som Tam',
+                'title' => 'Папая салат Som Tam / Papaya salad Som Tam / ส้มตำ',
                 'description' => 'Классический тайский салат',
                 'price' => 80,
                 'cuisine_id' => 'THAI',
@@ -43,7 +43,7 @@ class SaladMenuSeeder extends Seeder
                 'image' => 'menu-images/salad-papaya.jpeg'
             ],
             [
-                'title' => 'Салат Пад-Тай / Pad-Thai salad',
+                'title' => 'Салат Пад-Тай / Pad-Thai salad / สลัดผัดไทย',
                 'description' => 'Классический тайский салат на основе рисовой лапши',
                 'price' => 120,
                 'cuisine_id' => 'THAI',
@@ -52,7 +52,7 @@ class SaladMenuSeeder extends Seeder
                 'image' => 'menu-images/salad-pad-thai.jpg'
             ],
             [
-                'title' => 'Салат из крабовых палочек / Crab-sticks salad',
+                'title' => 'Салат из крабовых палочек / Crab-sticks salad / สลัดปูอัด',
                 'description' => 'Салат из крабовых палочек с кукурузой, рисом и вареными яйцами - вкусная и очень популярная закуска.',
                 'price' => 95,
                 'cuisine_id' => 'ALL',

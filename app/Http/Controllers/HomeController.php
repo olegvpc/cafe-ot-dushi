@@ -51,6 +51,17 @@ class HomeController extends Controller
 
         return view('home.show-menu', compact(['drink', 'salads', 'mains', 'soups', 'menus']));
     }
+
+    public function getSpecialMenu()
+    {
+        // Все блюда спец предложения
+        $menus = Menu::query()
+            ->where('active', '=', true)
+            ->where('category_id', '=','SPECIAL')
+            ->get();
+
+        return view('home.special', compact(['menus']));
+    }
     /**
      * Store a newly created resource in storage.
      */

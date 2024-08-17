@@ -35,7 +35,6 @@ class DatabaseSeeder extends Seeder
                     SpecialMenuSeeder::class,
                     AlcoholMenuSeeder::class,
                     TableSeeder::class,
-                    // OrderSeeder::class,
                 ]);
                 DB::commit();
             });

@@ -17,16 +17,7 @@ class MainMenuSeeder extends Seeder
         // images/no-image.jpeg
         $maines = [
             [
-                'title' => 'Голубцы / Golubtsi (cabbage meat rolls)',
-                'description' => 'Наши голубцы всем голубцам голубцы. Обязательно нужно попробовать',
-                'price' => 130,
-                'cuisine_id' => 'RUS',
-                'category_id'=> 'MAIN',
-                'active' => true,
-                'image' => 'images/no-image.jpeg'
-            ],
-            [
-                'title' => 'Куриный стейк с гарниром / Chicken stack',
+                'title' => 'Куриный стейк с гарниром / Chicken stack / กองไก่',
                 'description' => 'Классическая куриная грудка поджаренная до румяной корочки',
                 'price' => 140,
                 'cuisine_id' => 'ALL',
@@ -35,7 +26,7 @@ class MainMenuSeeder extends Seeder
                 'image' => 'images/no-image.jpeg'
             ],
             [
-                'title' => 'Куриные контлеты с гарниром / Chicken patty - burger with side dish',
+                'title' => 'Куриные контлеты с гарниром / Chicken patty-burger with side dish / ไก่คอตเล็ตพร้อมเครื่องเคียง',
                 'description' => 'Классическая куриная котлета в панировке с гарниром на выбор',
                 'price' => 120,
                 'cuisine_id' => 'ALL',
@@ -44,7 +35,7 @@ class MainMenuSeeder extends Seeder
                 'image' => 'menu-images/main-cotlet-pork.jpg'
             ],
             [
-                'title' => 'Котлеты свиные с гарниром / Pork patty - burger with side dish',
+                'title' => 'Котлеты свиные с гарниром / Pork patty-burger with side dish / หมูทอดพร้อมเครื่องเคียง',
                 'description' => 'Классическая котлета из свинины в панировке с гарниром на выбор',
                 'price' => 130,
                 'cuisine_id' => 'ALL',
@@ -53,13 +44,49 @@ class MainMenuSeeder extends Seeder
                 'image' => 'menu-images/main-cotlet-pork.jpg'
             ],
             [
-                'title' => 'Жареный рис с криветками / Fried rice with shrimp',
+                'title' => 'Куриная печень с гарниром / Chicken liver with garnish / ตับไก่พร้อมเครื่องปรุง',
+                'description' => 'Классическая куриная печенка в соусе с гарниром на выбор',
+                'price' => 150,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Пельмени со свининой / Dumplings with pork / เกี๊ยวหมู',
+                'description' => 'Наши сибирские пельмни. Обязательно нужно попробовать. Можно попросить с бульеном',
+                'price' => 130,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Пельмени с курицей / Dumplings with chicken / เกี๊ยวกับไก่',
+                'description' => 'Наши сибирские пельмни. Обязательно нужно попробовать. Можно попросить с бульеном',
+                'price' => 120,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Жареный рис с криветками / Fried rice with shrimp / ข้าวผัดกุ้ง',
                 'description' => 'Жареный рис с креветками и овощами, по-тайски. Очень полезное и сытная еда',
                 'price' => 110,
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
                 'active' => true,
                 'image' => 'menu-images/main-fried-rice-shrim.jpg'
+            ],
+            [
+                'title' => 'Голубцы / Golubtsi (cabbage meat rolls)',
+                'description' => 'Наши голубцы всем голубцам голубцы. Обязательно нужно попробовать',
+                'price' => 130,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
             ],
         ];
         foreach ($maines as $dish) {

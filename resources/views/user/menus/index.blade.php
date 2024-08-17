@@ -15,6 +15,7 @@
         </x-slot>
     </x-title>
 
+    @include('includes.filter')
 
     <div class="row">
         @if ($menus->isEmpty())
@@ -28,7 +29,7 @@
             @endforeach
         @endif
     </div>
-    @include('includes.filter')
+{{--    @include('includes.filter')--}}
 
     {{--    выводим встренную в Laravel паджинацию--}}
     {{ $menus->links() }}

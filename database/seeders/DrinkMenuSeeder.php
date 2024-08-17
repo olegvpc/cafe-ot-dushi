@@ -17,7 +17,7 @@ class DrinkMenuSeeder extends Seeder
         // images/no-image.jpeg
         $drinks = [
             [
-                'title' => 'Компот из клубники / Strawberry compote',
+                'title' => 'Компот из клубники / Strawberry compote / เครื่องดื่มสตรอเบอร์รี่',
                 'description' => 'Сваренный по сибирскому рецепту с добавлением секретного ингридиента',
                 'price' => 30,
                 'cuisine_id' => 'RUS',
@@ -33,6 +33,69 @@ class DrinkMenuSeeder extends Seeder
                 'category_id'=> 'DRINK',
                 'active' => true,
                 'image' => 'menu-images/drinks-airan.jpeg'
+            ],
+            [
+                'title' => 'Кола / Coca-Cola / โคคา-โคลา',
+                'description' => 'Отличный прохладительный напиток',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Фанта / Fanta / แฟนต้า',
+                'description' => 'Отличный прохладительный напиток',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Спрайт / Sprite / เทพดา',
+                'description' => 'Отличный прохладительный напиток',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Вода / Water / น้ำ',
+                'description' => 'Отличный прохладительный напиток',
+                'price' => 20,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Сок яблочный / Apple juice / น้ำแอปเปิ้ล',
+                'description' => 'Отличный прохладительный напиток',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Сок апельсиновый / Orange juice / น้ำส้ม',
+                'description' => 'Отличный прохладительный напиток',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Сок ананасовый / Pineapple juice / น้ำสับปะรด',
+                'description' => 'Отличный прохладительный напиток',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
             ],
         ];
         foreach ($drinks as $dish) {

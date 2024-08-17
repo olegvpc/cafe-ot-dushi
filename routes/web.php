@@ -16,7 +16,7 @@ Route::prefix('home')->group(function () {
     Route::view('/login', 'home.login')->name('home.login');
     Route::get('/russian-menu', [HomeController::class, 'getRussianMenu'])->name('home.russian-menu');
     Route::get('/thai-menu', [HomeController::class, 'getThaiMenu'])->name('home.thai-menu');
-    Route::view('/special-menu', 'home.special')->name('home.special-menu');
+    Route::get('/special-menu', [HomeController::class, 'getSpecialMenu'])->name('home.special-menu');
 });
 
 // Переносим все роуты с постами в файл routes.user.php

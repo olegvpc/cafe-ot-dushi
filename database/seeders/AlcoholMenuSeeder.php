@@ -17,7 +17,7 @@ class AlcoholMenuSeeder extends Seeder
         // images/no-image.jpeg
         $alcohols = [
             [
-                'title' => 'Пиво Chang 0,6 / Beer Chang big',
+                'title' => 'Пиво Chang 0,6 / Beer Chang big / เบียร์ช้างใหญ่',
                 'description' => 'Тайское пиво со слоном',
                 'price' => 90,
                 'cuisine_id' => 'ALL',
@@ -26,7 +26,7 @@ class AlcoholMenuSeeder extends Seeder
                 'image' => 'menu-images/.jpeg'
             ],
             [
-                'title' => 'Пиво Chang 0,3 / Beer Chang small',
+                'title' => 'Пиво Chang 0,3 / Beer Chang small / เบียร์ ลีโอ ใหญ่',
                 'description' => 'Тайское пиво со слоном',
                 'price' => 50,
                 'cuisine_id' => 'ALL',
@@ -44,7 +44,7 @@ class AlcoholMenuSeeder extends Seeder
                 'image' => 'menu-images/.jpeg'
             ],
             [
-                'title' => 'Пиво Leo 0,3 / Beer Leo small',
+                'title' => 'Пиво Leo 0,3 / Beer Leo small / เบียร์ ลีโอ เล็ก',
                 'description' => 'Тайское пиво c леопардом',
                 'price' => 50,
                 'cuisine_id' => 'ALL',
@@ -53,7 +53,7 @@ class AlcoholMenuSeeder extends Seeder
                 'image' => 'menu-images/.jpeg'
             ],
             [
-                'title' => 'Пиво Singha 0,6 / Beer Singha big',
+                'title' => 'Пиво Singha 0,6 / Beer Singha big / เบียร์สิงห์ใหญ่',
                 'description' => 'Тайское пиво популярное',
                 'price' => 100,
                 'cuisine_id' => 'ALL',
@@ -62,7 +62,7 @@ class AlcoholMenuSeeder extends Seeder
                 'image' => 'menu-images/.jpeg'
             ],
             [
-                'title' => 'Пиво Singha 0,3 / Beer Singha small',
+                'title' => 'Пиво Singha 0,3 / Beer Singha small / เบียร์สิงห์ตัวเล็ก',
                 'description' => 'Тайское пиво популярное',
                 'price' => 60,
                 'cuisine_id' => 'ALL',
@@ -71,7 +71,7 @@ class AlcoholMenuSeeder extends Seeder
                 'image' => 'menu-images/.jpeg'
             ],
             [
-                'title' => 'Ром Sang Som / Rum Sang Som',
+                'title' => 'Ром Sang Som / Rum Sang Som / แสงโสม',
                 'description' => 'Тайский ром любят все',
                 'price' => 50,
                 'cuisine_id' => 'ALL',
