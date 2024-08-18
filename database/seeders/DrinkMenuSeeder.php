@@ -23,7 +23,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drinks-kompot.jpeg'
+                'image' => 'menu-images/drink-kompot.jpg'
             ],
             [
                 'title' => 'Айран / Airan',
@@ -41,7 +41,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-coca.jpeg'
+                'image' => 'menu-images/drink-cola.jpeg'
             ],
             [
                 'title' => 'Фанта / Fanta / แฟนต้า',

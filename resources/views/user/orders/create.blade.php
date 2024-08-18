@@ -1,4 +1,4 @@
-@props(['order'=>null, 'menus'=>null, 'selectedMenus'=>null, 'categories'=>[]])
+{{--@props(['order'=>null, 'menus'=>null, 'selectedMenus'=>null, 'categories'=>[]])--}}
 @extends('layouts.main')
 
 {{-- если кода мало в секции, то можно написать контент вторым параметром в секции --}}

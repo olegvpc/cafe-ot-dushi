@@ -1,12 +1,10 @@
-@props(['tableId'=>null, 'order'=>null])
+{{--@props(['tableId'=>null, 'order'=>null])--}}
 @extends('layouts.main')
 
-{{-- если кода мало в секции, то можно написать контент вторым параметром в секции --}}
-@section('page.title', 'Cancel Order')
+@section('page.title', 'Orders report ')
 
 @section('main.content')
 
-{{--    {{ dd($tableId, $order) }}--}}
     <x-title>
         {{ __('Orders Report / รายงานคำสั่งซื้อ:') }}
     </x-title>
@@ -20,19 +18,21 @@
 
     <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-            <div class="fw-bold">Total Orders {{ $orders->count() }}</div>
+            <div class="fw-bold text-uppercase fs-4">Total Orders: {{ $orders->count() }}</div>
         </div>
-        <span class="badge bg-primary rounded-pill">{{$orders->sum('total_amount')}}</span>
+        <span class="badge bg-primary rounded-pill fs-4">{{$orders->sum('total_amount')}}</span>
     </li>
     @foreach($orders as $order)
         <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
                 <div class="fw-bold {{ $order->canceled_at ? 'text-danger' : 'text-success' }}">Status: {{ $order->canceled_at ?  "Canceled" : ''}} {{ $order->done ? "Done" : ''}}</div>
-                Table: {{ $order->table_id }}
-                <p class="m1">Date: {{ $order->created_at }}</p>
-                <p class="m1">Comment: {!!$order->comment?? 'In process'!!}</p>
+                Order: {{ $order->id }} / Table: {{ $order->table_id }}
+                <p class="m1">Date open: {{ $order->created_at }} / Date closed: {{ $order->done_at?? 'No done date' }} </p>
+                <p class="m1"> Menus: {{ $order->menus }} / Comment: {!!$order->comment?? 'In process'!!}</p>
             </div>
-            <span class="badge bg-primary rounded-pill">{{ $order->total_amount }}</span>
+                <a href="{{ route('user.orders.show', $order->id) }}">
+                    <span class="badge bg-primary rounded-pill fs-6">{{ $order->total_amount }}</span>
+                </a>
         </li>
     @endforeach
 </ul>

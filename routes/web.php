@@ -54,7 +54,9 @@ Route::middleware('auth')->group(function(){
         // Удаление пункта меню из списка заказа (order)
         Route::delete('/orders/destroy/{order}', [OrderController::class, 'destroy'])->name('user.orders.destroy');
         // Показываем страницу с формой для комментария при ОБНУЛЕНИИ стола с заказом
-        Route::get('/orders/{order}', [OrderController::class, 'cancel'])->name('user.orders.cancel');
+        Route::get('/orders/{order}/cancel', [OrderController::class, 'cancel'])->name('user.orders.cancel');
+        // Показываем order
+        Route::get('/orders/{order}/show', [OrderController::class, 'show'])->name('user.orders.show');
         // Cancel заказа - выполнение
         Route::put('/orders/{order}', [OrderController::class, 'delete'])->name('user.orders.delete');
         // Сохраняется ВЫПОЛНЕНИЕ заказа список меню в order

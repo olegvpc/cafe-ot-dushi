@@ -251,6 +251,27 @@ class OrderController extends Controller
         // return 'Страница с формой комментария';
     }
 
+    /**
+     * Вызов страницы с показом Заказа.
+     */
+    public function show(Request $request, string $orderId)
+    {
+//        dd($orderId);
+
+        $order = Order::query()->findOrFail($orderId);
+        $menusArray = json_decode($order->menus, true);
+        $menus = [];
+        $order_amount = 0;
+        foreach ($menusArray as $item) {
+            $menuItem = Menu::query()->findOrFail($item);
+            $menus[] = $menuItem;
+            $order_amount += $menuItem->price;
+        }
+        // dd($tableId, $table, $order);
+        return view('user.orders.show', compact(['menus', 'order', "order_amount"]));
+        // return 'Страница с формой комментария';
+    }
+
     public function delete(Request $request, string $orderId)
     {
         $validated = $request->validate([
