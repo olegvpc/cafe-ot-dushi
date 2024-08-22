@@ -30,7 +30,7 @@ class SoupMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'SOUP',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/soup-chicken.jpg'
             ],
             [
                 'title' => 'Окрошка на квасе или кефире / Okroshka with kvass or kefir',

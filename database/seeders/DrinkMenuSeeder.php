@@ -104,7 +104,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/drink-cofe-capuchino.jpg'
             ],
         ];
         foreach ($drinks as $dish) {

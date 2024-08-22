@@ -86,7 +86,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-golubtsi.jpg'
             ],
             [
                 'title' => 'Паста Карбонаре / Pasta Carbonare with bacon / พาสต้าคาร์โบนาเร่กับเบคอน',
@@ -96,6 +96,24 @@ class MainMenuSeeder extends Seeder
                 'category_id'=> 'MAIN',
                 'active' => true,
                 'image' => 'menu-images/main-pasta-carbonare.jpg'
+            ],
+            [
+                'title' => 'Жареное филе рыбы с гарниром / Fried fish fillet with garnish / เนื้อปลาทอดกับเครื่องปรุง',
+                'description' => 'Жареная в кляре рыба пангасиус с гарниром на выбор',
+                'price' => 150,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'menu-images/main-fish.jpg'
+            ],
+            [
+                'title' => 'Куриное филе с ветчиной и сыром с гарниром / Chicken fillet with ham and cheese with garnish / เนื้อไก่กับแฮมและชีสพร้อมเครื่องปรุง',
+                'description' => 'Куриное филе с ветчиной и сыром с гарниром на выбор',
+                'price' => 180,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'menu-images/main-chicken-hum.jpg'
             ],
         ];
         foreach ($maines as $dish) {

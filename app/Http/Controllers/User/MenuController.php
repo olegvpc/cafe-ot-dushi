@@ -65,7 +65,7 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $validated = validate($request->all(), [
-            'title' => ['required', 'string', 'min:3', 'max:100'],
+            'title' => ['required', 'string', 'min:3', 'max:200'],
             'cuisine_id' => ['required', 'string', 'max:10'],
             'description' => ['required', 'string', 'max:1000'],
             'active' => ['nullable', 'boolean'],
@@ -130,7 +130,7 @@ class MenuController extends Controller
     public function update(Request $request, int $menuId)
     {
         $validated = validate($request->all(), [
-            'title' => ['required', 'string', 'min:5', 'max:100'],
+            'title' => ['required', 'string', 'min:5', 'max:200'],
             'description' => ['required', 'string', 'max:1000'],
             'active' => ['nullable', 'boolean'],
             'cuisine_id' => ['required', 'string', 'max:10'],
