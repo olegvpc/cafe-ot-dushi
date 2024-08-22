@@ -29,21 +29,22 @@ class MenuController extends Controller
         array_unshift($categories, "Все категории");
         if (Auth::check()) {
             $query = Menu::query();
+//            $query->select('menus.*', 'categories.sort');
 //            $query->where('active', '=', true);
+//            $query->join('categories', 'categories.id', '=', 'menus.category_id');
 
             if ($search = $validated['search'] ?? null) {
                 $query->where('title', 'like', "%{$search}%");
             }
-            // dd($validated['category_id'] !== '-1', $allCategories);
             if ($category_id = $validated['category_id'] ?? null) {
                     $query->where('category_id', $category_id);
             }
-//            dd($validated['cuisine_id'] ?? null);
             if ($cuisine_id_presents = $validated['cuisine_id'] ?? null) {
                 if ($cuisine_id_presents && $validated['cuisine_id'] !== 'ALL') {
                     $query->where('cuisine_id', $cuisine_id_presents);
                 }
             }
+//            $query->orderBy('sort', 'ASC');
 
             $menus = $query->paginate(12);
 

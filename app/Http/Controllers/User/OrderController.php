@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Table;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
@@ -99,9 +100,17 @@ class OrderController extends Controller
         }
         // Если есть фильтрация, то фильтруем из базы
         $query = Menu::query();
+
+        $query->select('menus.*', 'categories.sort');
+        $query->join('categories', 'categories.id', '=', 'menus.category_id');
+
+        $query->where('active', '=', true);
+
         if ($category = $validated['category'] ?? null) {
             $query->where('category_id', $category);
         }
+        $query->orderBy('sort', 'ASC')->orderBy('id', 'ASC');
+
         $menus = $query->paginate(10);
 
         $orderMenusJson = $order->menus;
@@ -312,22 +321,7 @@ class OrderController extends Controller
             'from_date' => ['nullable', 'string', 'date'],
             'to_date' => ['nullable', 'string', 'date', 'after_or_equal:from_date'],
         ]);
-        // dd($validated);
 
-//        $query = Order::query();
-//        $query->whereDate('published_at', new Carbon('2023-05-08'))
-//        if ($search = $validated['search'] ?? null) {
-//            $query->where('title', 'like', "%{$search}%");
-//        }
-//
-//        if ($tag = $validated['tag'] ?? null) {
-//            $query->whereJsonContains('tags', $tag);
-//        }
-
-        // session(['hello'=>'HELLO']);
-
-//
-//        $orders = $query->paginate(12);
         $query = Order::query();
         if ($from_date = $validated['from_date'] ?? null) {
             $query->where('created_at', '>=', new Carbon($from_date));
@@ -342,25 +336,59 @@ class OrderController extends Controller
         }
 
         $orders = $query->orderBy('created_at', 'DESC')->get();
-
-//            ->where('created_at', '>=', now()->subMonth()->startOfMonth())
-//            ->whereDate('updated_at', new Carbon(now()))
-//            ->selectRaw('updated_at' as '')
-//            ->selectRaw('currencies.sort')
-//            ->selectRaw('count(*) as total_count')
-//            ->selectRaw('sum(total_amount) as total_amount')->get();
-//            ->selectRaw('avg(amount) as amount_avg')
-//            ->selectRaw('min(amount) as amount_min')
-//            ->selectRaw('max(amount) as amount_max')
-//            ->join('currencies', 'currencies.id', '=', 'donates.currency_id')
-//            ->groupBy('currency_id')
-//            ->orderBy('currencies.sort', 'ASC')
-//            ->get();
-        // dd($statistics);
         $amount = $orders->sum('total_amount' );
         // dd($amount);
         return view('user.orders.report', compact(['orders']));
     }
 
+    public function printOrder(Request $request, $tableId)
+    {
+        $table = Table::query()->findOrFail($tableId);
 
+        if ($table->order_id && !$table->is_free) {
+            $order = Order::query()->findOrFail($table->order_id);
+        } else {
+            // Если нет стола с заказом или он свободен - возвращаем назад
+            alert(__("No Table: $tableId oe Order in this Table"), 'danger');
+            return redirect()->route('user.orders.index');
+        }
+        $orderMenusJson = $order->menus;
+        $orderMenus = json_decode($orderMenusJson);
+        $selectedMenus = [];
+        $totalPrice = 0;
+        if ($orderMenus) {
+            foreach ($orderMenus as $dish) {
+                $menu = Menu::query()
+                    ->findOrFail($dish, ['id', 'title', 'price']);
+                $selectedMenus[] = $menu;
+                $totalPrice += $menu->price;
+            }
+        }
+        $data =[
+            'order_menus' => $selectedMenus,
+            'table_id' => $tableId,
+            'order_id' => $order->id,
+            'total_price' => $totalPrice,
+        ];
+
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('/user/orders/print-pdf', ['data' => $data])
+            ->setOption('zoom', 1.2)
+            ->setPaper('letter', 'portrait')
+            ->setOption('footer-center', '')
+            ->setOption('footer-font-size', 5);
+        $pdf->setOptions([
+            'dpi' => 150,
+            'defaultFont' => 'sans-serif',
+            'fontHeightRatio' => 1,
+            'isPhpEnabled' => true,
+        ]);
+        $data = now()->format('H-i-s');
+        $fileName = 'table-' . $tableId . '-' . $data . '.pdf';
+        $path = public_path('/dompdf/'); // public/order-pdf/
+        $pdf->save($path . $fileName); // сохраняет на сервер
+
+        alert(__("Check dowloaded for table: $tableId!"), 'primary');
+        return $pdf->stream(); // скачивание файла
+    }
 }

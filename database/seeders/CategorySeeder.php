@@ -48,9 +48,9 @@ class CategorySeeder extends Seeder
                 'sort' => 970
             ],
             [
-                'id' => 'DESSERT',
-                'name' => 'Дессерт / Dessert / ขนม',
-                'sort' => 975
+                'id' => 'DISSERT',
+                'name' => 'Дессерт / Dissert / วิทยานิพนธ์',
+                'sort' => 995
             ],
         ];
 

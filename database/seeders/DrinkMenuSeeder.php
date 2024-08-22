@@ -97,6 +97,15 @@ class DrinkMenuSeeder extends Seeder
                 'active' => true,
                 'image' => 'menu-images/drink-pinapple.jpeg'
             ],
+            [
+                'title' => 'Кофе капучино горячий / Hot cappuccino coffee / กาแฟคาปูชิโน่ร้อน',
+                'description' => 'Горячий капучино сваренный из тайландского кофе в итальянской кефе-машине',
+                'price' => 50,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
         ];
         foreach ($drinks as $dish) {
             Menu::query()->firstOrCreate([

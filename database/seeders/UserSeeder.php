@@ -31,12 +31,18 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Николай',
-                'email' => 'nic@yandex.ru',
+                'email' => 'nikolaiinbox@mail.ru',
                 'password' => bcrypt('12345'),
                 'admin' => true
             ],
             [
-                'name' => 'Nin',
+                'name' => 'Роман',
+                'email' => 'ozon.ksm@mail.ru',
+                'password' => bcrypt('12345'),
+                'admin' => true
+            ],
+            [
+                'name' => 'Nn',
                 'email' => 'order@yandex.ru',
                 'password' => bcrypt('12345'),
                 'admin' => false

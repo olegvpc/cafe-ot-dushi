@@ -9,16 +9,16 @@
                         action="{{ route('user.orders.create', $tableItem->id) }}"
                         method="GET">
 {{--                        <input type="hidden" name="table_id" value={{ $tableItem->id  }} autocomplete="off">--}}
-                        <x-button type="submit" class="btn-primary {{ !($tableItem->is_free) ? 'disabled' : '' }}">
-                            {{ __('Start') }}
+                        <x-button type="submit" class="btn-primary">
+                            {{  $tableItem->is_free ? __('Start') : __('Change')}}
                         </x-button>
                     </x-form>
                     <div class="fw-bold m-1">{{ __('Table') }}: {{ $tableItem->id }}</div>
                     <x-form class="text-white d-flex align-items-center"
-                          action="{{ route('user.orders.create', $tableItem->id) }}"
-                            method="GET">
-                        <x-button type="submit" class="btn-primary btn-sm {{ !($tableItem->is_free) ? '' : 'disabled' }}">
-                            {{ __("Change") }}
+                          action="{{ route('user.orders.print', $tableItem->id) }}"
+                            method="POST">
+                        <x-button type="submit" class="btn-dark btn-sm {{ !($tableItem->is_free) ? '' : 'disabled' }}">
+                            {{ __("Print") }}
                         </x-button>
                     </x-form>
                 </div>

@@ -1,7 +1,9 @@
 @props(['name' => ''])
 
-<x-errors />
+@php($from_date = session()->pull('from_date'))
 
+<x-errors />
+{{--{{ dd(request('from_date'), old('from_date')), request()->flash() }}--}}
 <x-form action="{{ route('user.report')}}" method='GET'>
     <div class="row">
 

@@ -21,7 +21,7 @@ class SoupMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'SOUP',
                 'active' => true,
-                'image' => 'menu-images/soup-borch.jpeg'
+                'image' => 'menu-images/soup-borch.jpg'
             ],
             [
                 'title' => 'Куриный суп / Chicken soup / ซุปไก่',

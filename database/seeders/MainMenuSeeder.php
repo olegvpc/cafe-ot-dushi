@@ -80,13 +80,22 @@ class MainMenuSeeder extends Seeder
                 'image' => 'menu-images/main-fried-rice-shrim.jpg'
             ],
             [
-                'title' => 'Голубцы / Golubtsi (cabbage meat rolls)',
+                'title' => 'Голубцы / Golubtsi (cabbage meat rolls) / โกลุบซี',
                 'description' => 'Наши голубцы всем голубцам голубцы. Обязательно нужно попробовать',
                 'price' => 130,
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
                 'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Паста Карбонаре / Pasta Carbonare with bacon / พาสต้าคาร์โบนาเร่กับเบคอน',
+                'description' => 'Знаменитое блюдо Италии с сыром пармезан',
+                'price' => 110,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'menu-images/main-pasta-carbonare.jpg'
             ],
         ];
         foreach ($maines as $dish) {

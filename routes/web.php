@@ -61,6 +61,8 @@ Route::middleware('auth')->group(function(){
         Route::put('/orders/{order}', [OrderController::class, 'delete'])->name('user.orders.delete');
         // Сохраняется ВЫПОЛНЕНИЕ заказа список меню в order
         Route::post('/orders/{order}', [OrderController::class, 'store'])->name('user.orders.store');
+        // Созается order но без списка меню
+        Route::post('/orders/print/{order}', [OrderController::class, 'printOrder'])->name('user.orders.print');
 
         Route::get('/report', [OrderController::class, 'report'])->name('user.report');
 //        Route::put('/orders/{order}', [OrderController::class, 'update'])->name('user.orders.update');
@@ -68,7 +70,11 @@ Route::middleware('auth')->group(function(){
     });
 });
 
-
+//php artisan route:cache
+//php artisan route:clear
+//php artisan config:cache
+//php artisan config:clear
+//php artisan optimize
 
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');

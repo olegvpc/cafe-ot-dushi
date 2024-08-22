@@ -1,0 +1,86 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Menu;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class DissertMenuSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        // images/no-image.jpeg
+        $disserts = [
+            [
+                'title' => 'Пирожное Картошка / Potato cake / เค้กมันฝรั่ง',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 60,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Песочные кольца / Ring cake / เค้กแหวน',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 40,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Пирожное Муравейник / Muraveinik cake / เค้กมูราวีนิก',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 60,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Трубочка со сгущенкой / Tube with condensed milk / หลอดใส่นมข้น',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Трайфл Сникерс / Trifle Snickers / สนิกเกอร์เรื่องเล็ก',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 90,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Трайфл Наполеон / Trifle Napoleon / เรื่องเล็กนโปเลียน',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 90,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+        ];
+        foreach ($disserts as $dish) {
+            Menu::query()->firstOrCreate([
+                'title' => $dish['title']
+            ], [
+                'description' => $dish['description'],
+                'price' => $dish['price'],
+                'cuisine_id' => $dish['cuisine_id'],
+                'category_id' => $dish['category_id'],
+                'active'=> $dish['active'],
+                'image' => $dish['image'],
+            ]);
+        }
+    }
+}
