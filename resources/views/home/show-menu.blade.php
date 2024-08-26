@@ -11,7 +11,7 @@
                     <a href="#" class="tm-tab-link active" data-id="drink">Drink / ดื่ม</a>
                 </li>
                 <li>
-                    <a href="#" class="tm-tab-link active" data-id="soup">Soup / เครื่องดื่ม</a>
+                    <a href="#" class="tm-tab-link" data-id="soup">Soup / เครื่องดื่ม</a>
                 </li>
                 <li>
                     <a href="#" class="tm-tab-link" data-id="salad">Salad / สลัด</a>
@@ -24,14 +24,14 @@
         <div id="drink" class="tm-tab-content">
             @foreach ($drink as $menuItem)
                 <div class="tm-list">
-                    <x-home.card :menuItem=$menuItem />
+                    <x-home.card :menuItem="$menuItem" />
                 </div>
             @endforeach
         </div>
         <div id="soup" class="tm-tab-content">
             @foreach ($soups as $menuItem)
                 <div class="tm-list">
-                    <x-home.card :menuItem=$menuItem />
+                    <x-home.card :menuItem="$menuItem" />
                 </div>
             @endforeach
         </div>
@@ -39,7 +39,7 @@
             @foreach ($salads as $menuItem)
                 <!-- используем компонент для отображения блюд-->
                 <div class="tm-list">
-                    <x-home.card :menuItem=$menuItem />
+                    <x-home.card :menuItem="$menuItem" />
                 </div>
             @endforeach
         </div>
@@ -47,7 +47,7 @@
             @foreach ($mains as $menuItem)
                 <!-- используем компонент для отображения блюд-->
                 <div class="tm-list">
-                    <x-home.card :menuItem=$menuItem />
+                    <x-home.card :menuItem="$menuItem" />
                 </div>
             @endforeach
         </div>

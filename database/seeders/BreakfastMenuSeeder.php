@@ -6,7 +6,7 @@ use App\Models\Menu;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SpecialMenuSeeder extends Seeder
+class BreakfastMenuSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,7 +20,7 @@ class SpecialMenuSeeder extends Seeder
                 'description' => '<ul><li>Жареные яйца / Fried egg</li><li>Тост / Toast</li><li>Ветчина и сосиски/ Ham and sausages</li><li>Картошка фри / French fries</li><li>Напиток / Drink</li></ul>',
                 'price' => 150,
                 'cuisine_id' => 'ALL',
-                'category_id'=> 'SPECIAL',
+                'category_id'=> 'BREAKFAST',
                 'active' => true,
                 'image' => 'menu-images/special-english.jpg'
             ],
@@ -29,7 +29,7 @@ class SpecialMenuSeeder extends Seeder
                 'description' => '<ul><li>Жареные яйца / Fried egg</li><li>Тост / Toast</li><li>Ветчина и сосиски/ Ham and sausages</li><li>Напиток / Drink</li></ul>',
                 'price' => 150,
                 'cuisine_id' => 'ALL',
-                'category_id'=> 'SPECIAL',
+                'category_id'=> 'BREAKFAST',
                 'active' => true,
                 'image' => 'menu-images/special-american.jpg'
             ],
@@ -38,7 +38,52 @@ class SpecialMenuSeeder extends Seeder
                 'description' => '<ul><li>Жареные яйца / Fried egg</li><li>Лук / Onion</li><li>Помидоры / Tomatos</li><li>Напиток / Drink</li></ul>',
                 'price' => 100,
                 'cuisine_id' => 'ALL',
-                'category_id'=> 'SPECIAL',
+                'category_id'=> 'BREAKFAST',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Блины (сгущенка, джем, шоколад) / Pancakes (condensed milk, jam, chocolate) / แพนเค้ก',
+                'description' => 'Блины (сгущенка, джем, шоколад)',
+                'price' => 80,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'BREAKFAST',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Блины с ветчиной и сыром / Pancakes with ham and cheese / แพนเค้กกับแฮมและชีส',
+                'description' => 'Блины с ветчиной и сыром',
+                'price' => 110,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'BREAKFAST',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Блины с курицей / Pancakes with chicken / แพนเค้กกับไก่',
+                'description' => 'Блины с курицей',
+                'price' => 120,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'BREAKFAST',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Блины с мясом (свинина) / Pancakes with pork / แพนเค้กหมู',
+                'description' => 'Блины с мясом (свинина)',
+                'price' => 120,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'BREAKFAST',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Блины с мясом (свинина) и грибами / Pancakes with pork and mushrooms / แพนเค้กกับหมูและเห็ด',
+                'description' => 'Блины с мясом (свинина) и грибами',
+                'price' => 140,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'BREAKFAST',
                 'active' => true,
                 'image' => 'images/no-image.jpeg'
             ],

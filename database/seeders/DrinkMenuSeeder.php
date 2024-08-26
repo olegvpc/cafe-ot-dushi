@@ -20,7 +20,7 @@ class DrinkMenuSeeder extends Seeder
                 'title' => 'Шейк манго / Mango shake / มะม่วงปั่น',
                 'description' => 'Шейк из натуральных фруктов',
                 'price' => 60,
-                'cuisine_id' => 'RUS',
+                'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
                 'image' => 'menu-images/drink-mango.jpg'
@@ -29,7 +29,7 @@ class DrinkMenuSeeder extends Seeder
                 'title' => 'Шейк Арбузный / Watermelon shake / แตงโมปั่น',
                 'description' => 'Шейк из натуральных фруктов',
                 'price' => 60,
-                'cuisine_id' => 'RUS',
+                'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
                 'image' => 'menu-images/drink-watermelon.jpg'
@@ -38,7 +38,7 @@ class DrinkMenuSeeder extends Seeder
                 'title' => 'Шейк ананасовый / Pineapple shake / สับปะรดปั่น',
                 'description' => 'Шейк из натуральных фруктов',
                 'price' => 60,
-                'cuisine_id' => 'RUS',
+                'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
                 'image' => 'menu-images/drink-pinapple.jpg'
