@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function(){
     Route::prefix('user')->group(function () {
         Route::get('/menus', [MenuController::class, 'index'])->name('user.menus.index');
         Route::get('/menus/create', [MenuController::class, 'create'])->name('user.menus.create');
+        Route::get('/menus/list', [MenuController::class, 'list'])->name('user.menus.list');
+        Route::get('/menus/export', [MenuController::class, 'export'])->name('user.menus.export');
         Route::post('/menus', [MenuController::class, 'store'])->name('user.menus.store');
         Route::get('/menus/{menu}', [MenuController::class, 'show'])->name('user.menus.show')->whereNumber('menu');
         Route::get('/menus/{menu}/edit', [MenuController::class, 'edit'])->name('user.menus.edit');

@@ -17,6 +17,33 @@ class DrinkMenuSeeder extends Seeder
         // images/no-image.jpeg
         $drinks = [
             [
+                'title' => 'Шейк манго / Mango shake / มะม่วงปั่น',
+                'description' => 'Шейк из натуральных фруктов',
+                'price' => 60,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-mango.jpg'
+            ],
+            [
+                'title' => 'Шейк Арбузный / Watermelon shake / แตงโมปั่น',
+                'description' => 'Шейк из натуральных фруктов',
+                'price' => 60,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-watermelon.jpg'
+            ],
+            [
+                'title' => 'Шейк ананасовый / Pineapple shake / สับปะรดปั่น',
+                'description' => 'Шейк из натуральных фруктов',
+                'price' => 60,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-pinapple.jpg'
+            ],
+            [
                 'title' => 'Компот из клубники / Strawberry compote / เครื่องดื่มสตรอเบอร์รี่',
                 'description' => 'Сваренный по сибирскому рецепту с добавлением секретного ингридиента',
                 'price' => 30,
@@ -64,7 +91,7 @@ class DrinkMenuSeeder extends Seeder
             [
                 'title' => 'Вода / Water / น้ำ',
                 'description' => 'Отличный прохладительный напиток',
-                'price' => 20,
+                'price' => 30,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
@@ -98,6 +125,51 @@ class DrinkMenuSeeder extends Seeder
                 'image' => 'menu-images/drink-pinapple.jpeg'
             ],
             [
+                'title' => 'Чай кружка / Tea mug / แก้วน้ำชา',
+                'description' => 'Горячий чай',
+                'price' => 20,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-tea-mug.jpg'
+            ],
+            [
+                'title' => 'Чай заварник / Tea kettle / กาน้ำชา',
+                'description' => 'Горячий чай',
+                'price' => 50,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-tea-mug.jpg'
+            ],
+            [
+                'title' => 'Кофе американо горячий / Hot americano coffee / กาแฟอเมริกาโน่ร้อน',
+                'description' => 'Горячий американо сваренный из тайландского кофе в итальянской кефе-машине',
+                'price' => 50,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-cofe-americano.jpg'
+            ],
+            [
+                'title' => 'Кофе эспрессо горячий / Hot espresso coffee / กาแฟเอสเพรสโซ่ร้อน',
+                'description' => 'Горячий эспрессо сваренный из тайландского кофе в итальянской кефе-машине',
+                'price' => 50,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-cofe-espresso.jpg'
+            ],
+            [
+                'title' => 'Кофе латте горячий / Hot latte coffee / กาแฟลาเต้ร้อน',
+                'description' => 'Горячий латте сваренный из тайландского кофе в итальянской кефе-машине',
+                'price' => 50,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-cofe-latte.jpg'
+            ],
+            [
                 'title' => 'Кофе капучино горячий / Hot cappuccino coffee / กาแฟคาปูชิโน่ร้อน',
                 'description' => 'Горячий капучино сваренный из тайландского кофе в итальянской кефе-машине',
                 'price' => 50,
@@ -105,6 +177,24 @@ class DrinkMenuSeeder extends Seeder
                 'category_id'=> 'DRINK',
                 'active' => true,
                 'image' => 'menu-images/drink-cofe-capuchino.jpg'
+            ],
+            [
+                'title' => 'Кофе холодный / Cold coffee / กาแฟเย็น',
+                'description' => 'Холодный кофе сваренный из тайландского кофе в итальянской кефе-машине',
+                'price' => 60,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-cofe-cold.jpg'
+            ],
+            [
+                'title' => 'Мохито безалкогольный / Mojito non-alcoholic / โมฮิโต้ไม่มีแอลกอฮอล์',
+                'description' => 'Кубинский знаменитый мохито',
+                'price' => 150,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DRINK',
+                'active' => true,
+                'image' => 'menu-images/drink-mohito.jpeg'
             ],
         ];
         foreach ($drinks as $dish) {

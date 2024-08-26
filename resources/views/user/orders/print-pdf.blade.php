@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Invoice</title>
+        <title>Check</title>
         <style>
             /* CSS for styling the invoice */
             @font-face {
@@ -38,17 +38,12 @@
 
             }
             .container {
-                width: 280px;
+                width: 320px;
                 display: flex;
                 flex-direction: column;
                 border: black solid 1px;
             }
             /* added styles */
-            .logo {
-                width: 100px;
-                height: 100px;
-                float:right;
-            }
             .company-name {
                 font-size: 16px;
                 font-weight: bold;
@@ -81,14 +76,16 @@
         <div class="container">
             <div class="invoice-header">
                 <A4 class="company-name">Cafe "Ot Dushi"</A4> <br>
-
-                <A5 class="fw-bold">{{ __('Table') }}: {{ $data['table_id'] }}</A5>
+{{--                <img class="logo" src="{{ asset('/img/sheff-logo.png') }}" alt="Company Logo"><br>--}}
+                <A5 class="fw-bold">{{ __('Table') }}: {{ $data['table_id'] }}</A5><br>
                 <A5 class="fw-bold">{{ __('Order') }}: {{ $data['order_id'] }}</A5>
             </div>
             <div class="menu-container">
                 <ul style="padding-inline-start:10px">
                     @foreach($data['order_menus'] as $menu)
-                        <li class="menu-item">{!! $menu->title !!} <br>
+                        @php($titleArray = explode('/', $menu->title)
+                          )
+                        <li class="menu-item">{!! $titleArray[0] !!} <br>/  {!! $titleArray[1] !!}<br>
                             <span class="fw-bold m-1">{{ $menu->price }} Baht;</span></li>
                     @endforeach
                 </ul>

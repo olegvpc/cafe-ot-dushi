@@ -7,6 +7,11 @@
 @section('main.content')
 
     <x-title>
+        <x-slot name='left'>
+            <x-button-link href="{{ route('user.menus.list') }}">
+                {{ __('List / Export')}}
+            </x-button-link>
+        </x-slot>
         {{ __('Список Меню / List of dishes')}}
         <x-slot name='right'>
             <x-button-link href="{{ route('user.menus.create') }}">
@@ -24,7 +29,7 @@
             @foreach ($menus as $menuItem)
                 <!-- используем компонент для отображения блюд с условным переходом по props([from => ..])-->
                 <div class="col-12 col-md-4 mb-3">
-                    <x-menu.card :menuItem=$menuItem from="user"/>
+                    <x-menu.card :menuItem="$menuItem" from="user"/>
                 </div>
             @endforeach
         @endif

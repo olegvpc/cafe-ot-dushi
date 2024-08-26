@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Order;
 use App\Models\Table;
+use Barryvdh\DomPDF\PDF;
+use Dompdf\Adapter\CPDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
@@ -370,13 +372,16 @@ class OrderController extends Controller
             'order_id' => $order->id,
             'total_price' => $totalPrice,
         ];
+        // устанавливаем кастомное значение размера pdf для чека
+        CPDF::$PAPER_SIZES['8x16'] = array(0.0, 0.0, 209.76, 600.64);
 
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('/user/orders/print-pdf', ['data' => $data])
-            ->setOption('zoom', 1.2)
-            ->setPaper('letter', 'portrait')
-            ->setOption('footer-center', '')
-            ->setOption('footer-font-size', 5);
+            ->setOption('zoom', 1)
+            ->setOption('dpi', 150)
+            ->setPaper('8x16', 'portrait');
+//            ->setOption('footer-center', '')
+//            ->setOption('footer-font-size', 5);
         $pdf->setOptions([
             'dpi' => 150,
             'defaultFont' => 'sans-serif',
@@ -386,9 +391,9 @@ class OrderController extends Controller
         $data = now()->format('H-i-s');
         $fileName = 'table-' . $tableId . '-' . $data . '.pdf';
         $path = public_path('/dompdf/'); // public/order-pdf/
-        $pdf->save($path . $fileName); // сохраняет на сервер
+//        $pdf->save($path . $fileName); // сохраняет на сервер
 
         alert(__("Check dowloaded for table: $tableId!"), 'primary');
-        return $pdf->stream(); // скачивание файла
+        return $pdf->stream("check.pdf"); // скачивание файла
     }
 }

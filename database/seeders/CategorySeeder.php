@@ -17,9 +17,19 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'id' => 'DRINK',
-                'name' => 'Напитки / Drink/ เครื่องดื่ม',
-                'sort' => 991
+                'id' => 'BREAKFAST',
+                'name' => 'Завтраки / Breakfast / อาหารเช้า',
+                'sort' => 960
+            ],
+            [
+                'id' => 'SPECIAL',
+                'name' => 'Комплексные / Set / ชุด',
+                'sort' => 970
+            ],
+            [
+                'id' => 'BURGERS',
+                'name' => 'Бургеры / Burgers / เบอร์เกอร์',
+                'sort' => 975
             ],
             [
                 'id' => 'SALAD',
@@ -27,9 +37,14 @@ class CategorySeeder extends Seeder
                 'sort' => 980
             ],
             [
-                'id' => 'SOUP',
-                'name' => 'Супы / Coup / ซุป',
+                'id' => 'STARTER',
+                'name' => 'Закуски / Starter / สตาร์ทเตอร์',
                 'sort' => 985
+            ],
+            [
+                'id' => 'SOUP',
+                'name' => 'Супы / Soup / ซุป',
+                'sort' => 987
             ],
             [
                 'id' => 'MAIN',
@@ -38,19 +53,25 @@ class CategorySeeder extends Seeder
                 'sort' => 990
             ],
             [
-                'id' => 'ALCOHOL',
-                'name' => 'Алкоголь / Alcohol / แอลกอฮอล์',
-                'sort' => 999
+                'id' => 'GARNISH',
+                'created_at' => null,
+                'name' => 'Гарниры / Garnish / ตกแต่ง',
+                'sort' => 991
             ],
             [
-                'id' => 'SPECIAL',
-                'name' => 'Комплексные / Set / ชุด',
-                'sort' => 970
+                'id' => 'DRINK',
+                'name' => 'Напитки / Drink/ เครื่องดื่ม',
+                'sort' => 993
             ],
             [
                 'id' => 'DISSERT',
                 'name' => 'Дессерт / Dissert / วิทยานิพนธ์',
                 'sort' => 995
+            ],
+            [
+                'id' => 'ALCOHOL',
+                'name' => 'Алкоголь / Alcohol / แอลกอฮอล์',
+                'sort' => 999
             ],
         ];
 

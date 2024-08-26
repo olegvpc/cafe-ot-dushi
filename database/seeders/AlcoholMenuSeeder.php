@@ -79,7 +79,15 @@ class AlcoholMenuSeeder extends Seeder
                 'active' => true,
                 'image' => 'menu-images/drink-rum-samsong.jpeg'
             ],
-
+            [
+                'title' => 'Мохито алкогольный / Mojito alcoholic / โมฮิโต้แอลกอฮอล์',
+                'description' => 'Кубинский знаменитый мохито',
+                'price' => 150,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'ALCOHOL',
+                'active' => true,
+                'image' => 'menu-images/drink-mohito-alkohol.jpeg'
+            ],
         ];
         foreach ($alcohols as $dish) {
             Menu::query()->firstOrCreate([

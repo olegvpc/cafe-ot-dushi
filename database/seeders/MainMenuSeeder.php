@@ -86,7 +86,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'menu-images/main-golubtsi.jpg'
+                'image' => 'menu-images/main-golubtsy.jpg'
             ],
             [
                 'title' => 'Паста Карбонаре / Pasta Carbonare with bacon / พาสต้าคาร์โบนาเร่กับเบคอน',

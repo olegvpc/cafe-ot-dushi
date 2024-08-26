@@ -31,7 +31,7 @@ class SaladMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'SALAD',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/salad-chicken.jpg'
             ],
             [
                 'title' => 'Папая салат Som Tam / Papaya salad Som Tam / ส้มตำ',

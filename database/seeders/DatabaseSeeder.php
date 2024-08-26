@@ -31,6 +31,8 @@ class DatabaseSeeder extends Seeder
                     DrinkMenuSeeder::class,
                     SaladMenuSeeder::class,
                     SoupMenuSeeder::class,
+                    GarnishMenuSeeder::class,
+                    BurgerMenuSeeder::class,
                     MainMenuSeeder::class,
                     SpecialMenuSeeder::class,
                     AlcoholMenuSeeder::class,

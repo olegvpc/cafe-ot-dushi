@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Exports\MenusExport;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Post\StorePostRequest;
 use App\Models\Category;
 use App\Models\Menu;
-use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Validation\ValidationException;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MenuController extends Controller
 {
@@ -29,9 +25,6 @@ class MenuController extends Controller
         array_unshift($categories, "Все категории");
         if (Auth::check()) {
             $query = Menu::query();
-//            $query->select('menus.*', 'categories.sort');
-//            $query->where('active', '=', true);
-//            $query->join('categories', 'categories.id', '=', 'menus.category_id');
 
             if ($search = $validated['search'] ?? null) {
                 $query->where('title', 'like', "%{$search}%");
@@ -58,7 +51,7 @@ class MenuController extends Controller
     {
         $categories = getCategoriesMenu();
         $cuisines = getAllCuisines();
-//        dd($categoriesList);
+
         return view('user.menus.create', compact(['categories', 'cuisines']));
     }
 
@@ -74,9 +67,8 @@ class MenuController extends Controller
         ]);
         // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
         $imagePath = saveImageIn($request, 'menu-images');
-//         dd($validated, $imagePath);
+
         $menuItem = Menu::query()->firstOrCreate([
-            // 'creator_id' => User::query()->value('id'), // первого попавшего юзера
             'title' => $validated['title'],
         ],
         [
@@ -88,6 +80,7 @@ class MenuController extends Controller
             'price' => $validated['price'],
 
         ]);
+
         if ($menuItem->title === $validated['title'] && $menuItem->description === $validated['description']) {
             alert(__("DONE: Created new menu-item: $menuItem->title !"), 'primary');
             return redirect()->route('user.menus.index', $menuItem->id);
@@ -102,8 +95,6 @@ class MenuController extends Controller
 
     public function show($menu_id)
     {
-//        dd('Удалить SHOW');
-//        $categories = getCategoriesMenu();
         $menuItem =  Menu::query()
             ->findOrFail($menu_id, ['id', 'title', 'description', 'active', 'image', 'category_id', 'cuisine_id']);;
         return view('user.menus.show', compact(['menuItem']));
@@ -137,9 +128,7 @@ class MenuController extends Controller
             'category_id' => ['required', 'string', 'max:10'],
             'price' => ['required', 'numeric', 'min:1', 'max:10000'],
         ]);
-        // Удаляем старую картинку
-        $correctedMenu = Menu::find($menuId);
-        checkAndDeleteImage($correctedMenu->image);
+
         // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
         $imagePath = saveImageIn($request, 'menu-images');
 
@@ -151,7 +140,12 @@ class MenuController extends Controller
         $menuItem->cuisine_id = $validated['cuisine_id'];
         $menuItem->category_id = $validated['category_id'];
         $menuItem->price = $validated['price'];
-        $menuItem->image = $imagePath;
+        if ($imagePath !== 'images/no-image.jpeg') {
+            $menuItem->image = $imagePath;
+            // Удаляем старую картинку
+            $correctedMenu = Menu::find($menuId);
+            checkAndDeleteImage($correctedMenu->image);
+        }
 
         $menuItem->update();
 
@@ -171,5 +165,23 @@ class MenuController extends Controller
         $deletedMenu->delete();
         alert(__("DONE: Deleted $deletedMenu->title !"), 'primary');
         return redirect()->route('user.menus.index');
+    }
+
+    /**
+     * List of menu for Export in XLSX.
+     */
+    public function list()
+    {
+        $categories = Category::query()
+            ->with('menus')
+            ->orderBy('sort')
+            ->get();
+
+        return view('user.menus.index-list', compact(['categories']));
+    }
+
+    public function export()
+    {
+        return Excel::download(new MenusExport, 'menus.xlsx');
     }
 }

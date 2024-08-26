@@ -5,6 +5,12 @@
 
 {{--{{ dd($link, $slot, $right) }}--}}
     <div class="d-flex justify-content-between">
+        @isset($left)
+            <div>
+                {{ $left }}
+            </div>
+        @endisset
+
         <div>
             <h1 class="h2 m-0">
                 {{ $slot }}

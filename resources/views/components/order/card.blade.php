@@ -1,5 +1,8 @@
 @props(['tableItem'=>''])
 
+@php($orderMenus = json_decode($tableItem->menus, true))
+
+{{--{{ dd($tableItem) }}--}}
 <x-card class="{{ $tableItem->timeOff ? 'border-danger' : '' }}">
     <x-card-body class="{{ $tableItem->is_free ? 'light' : 'bg-warning' }}">
         <div class="mb-2">
@@ -8,7 +11,6 @@
                     <x-form class="text-white d-flex align-items-center"
                         action="{{ route('user.orders.create', $tableItem->id) }}"
                         method="GET">
-{{--                        <input type="hidden" name="table_id" value={{ $tableItem->id  }} autocomplete="off">--}}
                         <x-button type="submit" class="btn-primary">
                             {{  $tableItem->is_free ? __('Start') : __('Change')}}
                         </x-button>
@@ -17,14 +19,14 @@
                     <x-form class="text-white d-flex align-items-center"
                           action="{{ route('user.orders.print', $tableItem->id) }}"
                             method="POST">
-                        <x-button type="submit" class="btn-dark btn-sm {{ !($tableItem->is_free) ? '' : 'disabled' }}">
+                        <x-button type="submit" class="btn-dark btn-sm {{ ($tableItem->is_free || !($tableItem->menus) || empty($orderMenus)) ? 'disabled' : '' }}">
                             {{ __("Print") }}
                         </x-button>
                     </x-form>
                 </div>
             </div>
             <div class="d-flex flex-row justify-content-between">
-                @php($orderMenus = json_decode($tableItem->menus, true))
+{{--                @php($orderMenus = json_decode($tableItem->menus, true))--}}
                 @if(!empty($orderMenus))
                     <ul>
                         @foreach($orderMenus as $menu)
@@ -54,7 +56,7 @@
                     <x-form class="text-white d-flex align-items-center"
                         action="{{ route('user.orders.store', $tableItem->id) }}"
                         method="POST">
-                        <x-button type="submit" class="btn-success btn-sm {{ !($tableItem->is_free) ? '' : 'disabled' }}">
+                        <x-button type="submit" class="btn-success btn-sm {{ ($tableItem->is_free || !($tableItem->menus) || empty($orderMenus)) ? 'disabled' : '' }}">
                             {{ __("Done") }}
                         </x-button>
                     </x-form>
