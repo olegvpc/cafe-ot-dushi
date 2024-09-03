@@ -51,8 +51,8 @@ class User extends Authenticatable
         ];
     }
 // добавление возможности Eloquent
-    public function posts(): HasMany
+    public function payments(): HasMany
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Payment::class);
     }
 }

@@ -1,6 +1,5 @@
 @extends('layouts.main')
 
-{{-- если кода мало в секции, то можно написать контент вторым параметром в секции --}}
 @section('page.title', 'Show Order')
 
 @section('main.content')

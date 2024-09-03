@@ -5,12 +5,14 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Order;
+use App\Models\Payment;
 use App\Models\Table;
 use Barryvdh\DomPDF\PDF;
 use Dompdf\Adapter\CPDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
@@ -30,12 +32,7 @@ class OrderController extends Controller
           // dd($tables);
         foreach ($tables as $table) {
             $menus = json_decode($table->menus, true);
-//              dd($menus);
-            //  array:3 [▼ // app/Http/Controllers/User/OrderController.php:20
-//                    //  0 => "1001"
-//                    //  1 => "1003"
-//                    //  2 => "1006"
-//                    //]
+
             if ($menus) {
                 $menusInTable = [];
                 foreach ($menus as $dish) {
@@ -220,10 +217,10 @@ class OrderController extends Controller
             $totalAmount = 0;
         }
 
-
-        // dd($tableId, $table, $order, $totalAmount);
+        $payment = new Payment();
+//         dd($tableId, $table, $order, $totalAmount, Auth::user()->id);
         try {
-            DB::transaction(function () use ($table, $order, $totalAmount) {
+            DB::transaction(function () use ($table, $order, $totalAmount, $payment) {
                 $table->is_free = 1;
                 $table->order_id = null;
                 $table->save();
@@ -233,6 +230,14 @@ class OrderController extends Controller
                 $order->done_at = new Carbon(now());
                 $order->comment = 'Order done';
                 $order->save();
+
+                $payment->title = 'Order: ' . $order->id;
+                $payment->description = 'Order done';
+                $payment->is_daily = true;
+                $payment->image = 'images/no-image.jpeg';
+                $payment->amount_in = $totalAmount;
+                $payment->creator_id = Auth::user()->id;
+                $payment->save();
 
                 DB::commit();
             });

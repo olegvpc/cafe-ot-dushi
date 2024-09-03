@@ -1,7 +1,6 @@
-{{--@props(['tableId'=>null, 'order'=>null])--}}
 @extends('layouts.main')
 
-@section('page.title', 'Orders report ')
+@section('page.title', 'Orders report')
 
 @section('main.content')
 

@@ -144,7 +144,7 @@ class MenuController extends Controller
             $menuItem->image = $imagePath;
             // Удаляем старую картинку
             $correctedMenu = Menu::find($menuId);
-            checkAndDeleteImage($correctedMenu->image);
+            checkAndDeleteImage($request, $correctedMenu->image);
         }
 
         $menuItem->update();
@@ -156,11 +156,11 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function delete(string $menuId)
+    public function delete(Request $request, string $menuId)
     {
         $deletedMenu = Menu::find($menuId);
         // При удалении нужно проверить есть фото Блюда в папке starage/app/public + та часть пути которая хранится в БД (menu-image/hhhh.jpeg)
-        checkAndDeleteImage($deletedMenu->image);
+        checkAndDeleteImage(null, $deletedMenu->image);
 
         $deletedMenu->delete();
         alert(__("DONE: Deleted $deletedMenu->title !"), 'primary');

@@ -21,7 +21,7 @@
     </x-form-item>
 
 	<x-form-item>
-		<x-label required>{{ __('Содержание поста') }}</x-label>
+		<x-label required>{{ __('Описание блюда') }}</x-label>
 		<x-trix name="description" value="{{ $menuItem->description ?? ''}}" />
 
 		<x-error name='description' />
@@ -36,25 +36,27 @@
         <x-error name='category_id'/>
     </x-form-item>
 
-    <x-form-image>
-        <div>
-            <img class="img-fluid img-thumbnail" width="200px" src="{{ asset('/storage/' . $menuItem->image) }}" alt="Image Menu-Item">
-        </div>
+    <x-form-item-row>
+        @isset($menuItem->image)
+            <div>
+                <img class="img-fluid img-thumbnail" width="200px" src="{{ asset('/storage/' . $menuItem->image) }}" alt="Image Menu-Item">
+            </div>
+        @endisset
+
         <div class="ms-3">
             <x-label>{{ __("Выберите фото")}}</x-label>
             <p class='text-danger m-1'>Size must be less 100K</p>
             <x-input type="file" accept="image/*" name="image" />
         </div>
 
-
         <x-error name='image'/>
-    </x-form-image>
+    </x-form-item-row>
 
     <x-form-item>
         <x-label required>{{ __('Стоимость') }}</x-label>
         <x-input name="price" type="number" value="{{ $menuItem->price ?? ''}}"/>
 
-        <x-error name='title' />
+        <x-error name='price' />
     </x-form-item>
 
     <x-form-item>

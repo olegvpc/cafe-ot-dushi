@@ -25,6 +25,11 @@
                             {{ __("Orders Report") }}
                         </a>
                     </div>
+                    <div class="nav-link">
+                        <a class="nav-link" href="{{ route('user.payments.index') }}">
+                            {{ __("Payments") }}
+                        </a>
+                    </div>
                 @endauth
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

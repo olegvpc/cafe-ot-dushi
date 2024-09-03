@@ -17,7 +17,8 @@
 	</x-title>
 
 	<!-- для пеедачи php переменной в компонент ставим двоеточие - иначе это будет props-->
-	<x-menu.form  action="{{ route('user.menus.update', $menuItem->id) }}" :menuItem="$menuItem" :categories="$categories" :cuisines="$cuisines" method="PUT">
+	<x-menu.form  action="{{ route('user.menus.update', $menuItem->id) }}" :menuItem="$menuItem" :categories="$categories" :cuisines="$cuisines"
+                  method="PUT">
 		{{ __('Save')}}
 	</x-menu.form>
 

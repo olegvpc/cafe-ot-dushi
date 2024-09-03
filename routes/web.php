@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\User\MenuController;
 use App\Http\Controllers\User\OrderController;
+use App\Http\Controllers\User\PaymentController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
@@ -39,13 +40,14 @@ Route::middleware('auth')->group(function(){
     Route::prefix('user')->group(function () {
         Route::get('/menus', [MenuController::class, 'index'])->name('user.menus.index');
         Route::get('/menus/create', [MenuController::class, 'create'])->name('user.menus.create');
-        Route::get('/menus/list', [MenuController::class, 'list'])->name('user.menus.list');
-        Route::get('/menus/export', [MenuController::class, 'export'])->name('user.menus.export');
         Route::post('/menus', [MenuController::class, 'store'])->name('user.menus.store');
         Route::get('/menus/{menu}', [MenuController::class, 'show'])->name('user.menus.show')->whereNumber('menu');
         Route::get('/menus/{menu}/edit', [MenuController::class, 'edit'])->name('user.menus.edit');
         Route::put('/menus/{menu}', [MenuController::class, 'update'])->name('user.menus.update');
         Route::delete('/menus/{menu}', [MenuController::class, 'delete'])->name('user.menus.delete');
+
+        Route::get('/menus/list', [MenuController::class, 'list'])->name('user.menus.list');
+        Route::get('/menus/export', [MenuController::class, 'export'])->name('user.menus.export');
 
         // routers for orders
         Route::get('/orders', [OrderController::class, 'index'])->name('user.orders.index');
@@ -67,7 +69,12 @@ Route::middleware('auth')->group(function(){
         Route::post('/orders/print/{order}', [OrderController::class, 'printOrder'])->name('user.orders.print');
 
         Route::get('/report', [OrderController::class, 'report'])->name('user.report');
-//        Route::put('/orders/{order}', [OrderController::class, 'update'])->name('user.orders.update');
+
+        Route::get('/payments', [PaymentController::class, 'index'])->name('user.payments.index');
+        Route::get('/payments/create', [PaymentController::class, 'create'])->name('user.payments.create');
+        Route::post('/payments', [PaymentController::class, 'store'])->name('user.payments.store');
+        Route::get('/payments/{payment}/edit', [PaymentController::class, 'edit'])->name('user.payments.edit');
+        Route::put('/payments/{payment}', [PaymentController::class, 'update'])->name('user.payments.update');
 
     });
 });

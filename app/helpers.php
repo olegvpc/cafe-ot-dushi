@@ -104,10 +104,14 @@ if(! function_exists('saveImageIn')) {
 }
 
 if(! function_exists('checkAndDeleteImage')) {
-    function checkAndDeleteImage($imagePath): void
+    function checkAndDeleteImage($request, $imagePath): void
     {
+
+        if ( $request && !$request->file('image')) {
+            return;
+        }
         $imageMenuPath = Storage::path('/public/'.$imagePath);
-//        dd($imageMenuPath);
+
 // $imageMenuPath => "/var/www/html/storage/app/public/menu-images/круглый повар.png"
 // $deletedMenu->image => "menu-images/drinks-kompot.jpeg"
         $firstItemOfPath = explode("/", $imagePath)[0];
