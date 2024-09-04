@@ -136,12 +136,23 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request->input('amount_out'));
+        $errorNoAmounts = $request->input('amount_out') === NULL && $request->input('amount_in') === NULL;
+        $errorTwoAmounts = $request->input('amount_out') !== NULL && $request->input('amount_in') !== NULL;
         $validated = $request->validate([
             'title' => ['required', 'string'],
             'description' => ['required', 'string'],
             'payout-check' => ['nullable', 'string'],
-            'amount_out' => ['nullable', 'string'],
-            'amount_in' => ['nullable', 'string'],
+            'amount_out' => ['nullable', 'string', function (string $attribute, mixed $value, \Closure $fail) use ($errorNoAmounts, $errorTwoAmounts) {
+                if ($errorNoAmounts || $errorTwoAmounts) {
+                    $fail(__('Должно быть заполнено только одно поле - Amount_in OR Amount_out.'));
+                }
+            }],
+            'amount_in' => ['nullable', 'string', function (string $attribute, mixed $value, \Closure $fail) use ($errorNoAmounts, $errorTwoAmounts){
+                 if ($errorNoAmounts || $errorTwoAmounts) {
+                     $fail(__('Должно быть заполнено только одно поле - Amount_in OR Amount_out.'));
+                 }
+            }],
             'loaner_id' => ['nullable', 'id', Rule::exists('users', 'id')],
         ]);
 //        dd($request->input(), $validated);
@@ -199,31 +210,30 @@ class PaymentController extends Controller
      */
     public function update(Request $request, string $paymentId)
     {
+
+        $errorNoAmounts = $request->input('amount_out') === NULL && $request->input('amount_in') === NULL;
+        $errorTwoAmounts = $request->input('amount_out') !== NULL && $request->input('amount_in') !== NULL;
         $validated = $request->validate([
             'title' => ['required', 'string'],
             'description' => ['required', 'string'],
             'payout-check' => ['nullable', 'string'],
-            'amount_out' => ['nullable', 'string'],
-            'amount_in' => ['nullable', 'string'],
+            'amount_out' => ['nullable', 'string', function (string $attribute, mixed $value, \Closure $fail) use ($errorNoAmounts, $errorTwoAmounts) {
+                if ($errorNoAmounts || $errorTwoAmounts) {
+                    $fail(__('Должно быть заполнено только одно поле - Amount_in OR Amount_out.'));
+                }
+            }],
+            'amount_in' => ['nullable', 'string', function (string $attribute, mixed $value, \Closure $fail) use ($errorNoAmounts, $errorTwoAmounts){
+                if ($errorNoAmounts || $errorTwoAmounts) {
+                    $fail(__('Должно быть заполнено только одно поле - Amount_in OR Amount_out.'));
+                }
+            }],
             'loaner_id' => ['nullable', 'id', Rule::exists('users', 'id')],
         ]);
-//        dd($request->input(), $validated);
+
         // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
         $imagePath = saveImageIn($request, 'payment-images');
 
         $payment = Payment::query()->findOrFail($paymentId);
-//        $payment->title = $validated['title'];
-//        $payment->description = $validated['description'];
-
-//        $menuItem->price = $validated['price'];
-//        if ($imagePath !== 'images/no-image.jpeg') {
-//            $menuItem->image = $imagePath;
-//            // Удаляем старую картинку
-//            $correctedMenu = Menu::find($menuId);
-//            checkAndDeleteImage($request, $correctedMenu->image);
-//        }
-//
-//        $menuItem->update();
 
         try {
             DB::transaction(function () use ($request, $payment, $validated, $imagePath) {
@@ -237,10 +247,12 @@ class PaymentController extends Controller
 
                 if ($amountOut = $validated['amount_out']?? null) {
                     $payment->amount_out = $amountOut;
+                    $payment->amount_in = NULL;
                 }
 
                 if ($amountIn = $validated['amount_in']?? null) {
                     $payment->amount_in = $amountIn;
+                    $payment->amount_out = NULL;
                 }
 
                 $payment->update();
