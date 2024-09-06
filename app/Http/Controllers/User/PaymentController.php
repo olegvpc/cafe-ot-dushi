@@ -173,7 +173,10 @@ class PaymentController extends Controller
             'creditor_check' => ['nullable', 'string'],
             'creditor_id' => ['nullable', 'string', Rule::exists('users', 'id')],
         ]);
-//        dd($request->input(), $validated);
+        if (!$request->input('creditor_check')) {
+            $validated['creditor_id'] = NULL;
+        }
+//        dd($request->input('creditor_check'), $validated);
         // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
         $imagePath = saveImageIn($request, 'payment-images');
 
@@ -259,6 +262,9 @@ class PaymentController extends Controller
             'creditor_check' => ['nullable', 'string'],
             'creditor_id' => ['nullable', 'string', Rule::exists('users', 'id')],
         ]);
+        if (!$request->input('creditor_check')) {
+            $validated['creditor_id'] = NULL;
+        }
 
         // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
         $imagePath = saveImageIn($request, 'payment-images');
