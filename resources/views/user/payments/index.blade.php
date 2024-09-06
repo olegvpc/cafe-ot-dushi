@@ -22,7 +22,12 @@
     @include('includes.filter-yearmonth')
 
     <div class="d-flex column justify-content-between">
-        <div class="fw-bold text-uppercase fs-4">Creditor</div>
+        <ul class="list-group list-unstyled">
+            <x-payment.creditor-item :users="$creditors" >
+                {{ __('Creditors') }}
+            </x-payment.creditor-item>
+        </ul>
+
 
         <ul class="list-group">
             <x-payment.previeus :paymentPrevious="$paymentPrevious" />
@@ -30,7 +35,11 @@
             <x-payment.item :payments="$payments" :amount_monthly="$amount_monthly" :amount_monthly_negative="$amount_monthly_negative" />
         </ul>
 
-        <div class="fw-bold text-uppercase fs-4">Debtor</div>
+        <ul class="list-group list-unstyled">
+            <x-payment.creditor-item :users="$debtors">
+                {{ __('Debtors') }}
+            </x-payment.creditor-item>
+        </ul>
     </div>
 
 @endsection

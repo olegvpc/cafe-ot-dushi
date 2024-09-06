@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Creditor;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -53,27 +54,41 @@ class PaymentController extends Controller
             $amount_monthly -= $payment->amount_out?? 0;
         }
         $amount_monthly_negative = $amount_monthly < 0;
-//        dd($amount_monthly);
-        // preview month payments
-//        $query = Payment::query();
-
-//        $query->whereMonth('created_at', new Carbon(now()));
-//        $query->where('is_daily', false);
-
-//        $paymentPrevious = $query_previous->orderBy('created_at', 'DESC')->first();
-
 
         if (!$paymentPrevious) {
             $paymentPrevious = $this->createRecordPaymentPrevious($year, $month);
         }
         $amount_previeus = $paymentPrevious->amount_in - $paymentPrevious->amount_out;
-        $amount_previeus_negative = $amount_previeus <0;
 
         $amount_total = $amount_previeus + $amount_monthly;
         $amount_total_negative = $amount_total < 0;
 
+        // выводим всех кредиторов/ дебиторов
+        $loaners = Creditor::query()
+            ->selectRaw('user_id')
+            ->selectRaw('users.name')
+            ->selectRaw('sum(payments.amount_in) as credit')
+            ->selectRaw('sum(payments.amount_out) as debt')
+            ->join('payments', 'payments.id', '=', 'creditors.payment_id')
+            ->join('users','users.id', '=', 'creditors.user_id')
+            ->groupBy('creditors.user_id')
+            ->orderBy('creditors.user_id')
+            ->get();
+        $creditors = [];
+        $debtors =[];
+        foreach ($loaners as $loaner) {
+            $loaner->total = $loaner->credit - $loaner->debt;
+            if ($loaner->total > 0) {
+                $creditors[] = $loaner;
+            } elseif ($loaner->total < 0) {
+                $debtors[] = $loaner;
+            }
+        }
+//        dd($loaners, $creditors, $debtors);
         return view('user.payments.index', compact([
-            'payments', 'amount_monthly', 'amount_total', 'paymentPrevious', 'amount_monthly_negative', 'amount_total_negative'
+            'payments', 'amount_monthly', 'amount_total',
+            'paymentPrevious', 'amount_monthly_negative',
+            'amount_total_negative', 'creditors', 'debtors',
         ]));
 //        return 'OK';
     }
@@ -128,7 +143,9 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        return view('user.payments.create');
+        $creditors = getAllCreditors();
+//        dd($creditors);
+        return view('user.payments.create', compact(['creditors']));
     }
 
     /**
@@ -153,15 +170,17 @@ class PaymentController extends Controller
                      $fail(__('Должно быть заполнено только одно поле - Amount_in OR Amount_out.'));
                  }
             }],
-            'loaner_id' => ['nullable', 'id', Rule::exists('users', 'id')],
+            'creditor_check' => ['nullable', 'string'],
+            'creditor_id' => ['nullable', 'string', Rule::exists('users', 'id')],
         ]);
 //        dd($request->input(), $validated);
         // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
         $imagePath = saveImageIn($request, 'payment-images');
 
         $payment = new Payment();
+        $creditor = new Creditor();
         try {
-            DB::transaction(function () use ($payment, $validated, $imagePath) {
+            DB::transaction(function () use ($payment, $validated, $imagePath, $creditor) {
                 $payment->title = $validated['title'];
                 $payment->description = $validated['description'];
                 $payment->is_daily = true;
@@ -175,8 +194,18 @@ class PaymentController extends Controller
                 if ($amountIn = $validated['amount_in']?? null) {
                     $payment->amount_in = $amountIn;
                 }
+                if ($creditorId = $validated['creditor_id']?? null) {
+                    $payment->creditor_id = $creditorId;
+                }
 
                 $payment->save();
+
+                if ($creditorId = $validated['creditor_id']?? null) {
+                    $creditor->user_id = $creditorId;
+                    $creditor->payment_id = $payment->id;
+                    $creditor->save();
+                }
+
 
                 DB::commit();
             });
@@ -201,8 +230,9 @@ class PaymentController extends Controller
     public function edit(string $paymentId)
     {
         $payment = Payment::query()->findOrFail($paymentId);
+        $creditors = getAllCreditors();
 
-        return view('user.payments.edit', compact(['payment']));
+        return view('user.payments.edit', compact(['payment', 'creditors']));
     }
 
     /**
@@ -210,7 +240,6 @@ class PaymentController extends Controller
      */
     public function update(Request $request, string $paymentId)
     {
-
         $errorNoAmounts = $request->input('amount_out') === NULL && $request->input('amount_in') === NULL;
         $errorTwoAmounts = $request->input('amount_out') !== NULL && $request->input('amount_in') !== NULL;
         $validated = $request->validate([
@@ -227,16 +256,18 @@ class PaymentController extends Controller
                     $fail(__('Должно быть заполнено только одно поле - Amount_in OR Amount_out.'));
                 }
             }],
-            'loaner_id' => ['nullable', 'id', Rule::exists('users', 'id')],
+            'creditor_check' => ['nullable', 'string'],
+            'creditor_id' => ['nullable', 'string', Rule::exists('users', 'id')],
         ]);
 
         // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
         $imagePath = saveImageIn($request, 'payment-images');
 
         $payment = Payment::query()->findOrFail($paymentId);
+        $creditor = Creditor::query()->where('payment_id', '=', $paymentId)->first();
 
         try {
-            DB::transaction(function () use ($request, $payment, $validated, $imagePath) {
+            DB::transaction(function () use ($request, $payment, $validated, $imagePath, $creditor) {
                 $payment->title = $validated['title'];
                 $payment->description = $validated['description'];
                 $payment->updator_id = Auth::user()->id;
@@ -253,6 +284,11 @@ class PaymentController extends Controller
                 if ($amountIn = $validated['amount_in']?? null) {
                     $payment->amount_in = $amountIn;
                     $payment->amount_out = NULL;
+                }
+                if ($creditorId = $validated['creditor_id']?? null) {
+                    $payment->creditor_id = $creditorId;
+                    $creditor->user_id = $creditorId;
+                    $creditor->update();
                 }
 
                 $payment->update();

@@ -1,4 +1,4 @@
-@props(["payment"=>null])
+@props(["payment"=>null, "creditors"=>null])
 
 <x-errors />
 
@@ -57,6 +57,24 @@
         <x-error name='amount_in' />
     </x-form-item-row>
 
+    <x-form-item>
+        <x-checkbox type="checkbox" id="creditorCheckbox" name="creditor_check">
+            <span id="checkbox_creditor">{{__('Creditor / Кредитор / เจ้าหนี้')}}</span>
+        </x-checkbox>
+
+        <x-error name='creditor-check' />
+    </x-form-item>
+
+    <x-form-item class="d-none" id="creditor_item">
+        <x-label required>{{ __('Creditor / Debtor') }}</x-label>
+        <x-select name='creditor_id' value="{{ $payment->creditor_id ?? '' }}"
+                  :options="$creditors"
+        >
+            Users
+        </x-select>
+        <x-error name='creditor_id'/>
+    </x-form-item>
+
 
 	<x-button type="submit" class="btn-primary">
 		{{ $slot }}
@@ -77,6 +95,9 @@
             const input_amount_out = document.getElementById('input_amount_out')
             const input_amount_in = document.getElementById('input_amount_in')
 
+            const creditorCheckbox = document.getElementById('creditorCheckbox')
+            const creditor_item_element = document.getElementById('creditor_item')
+
             checkbox.addEventListener('change', (event) => {
                 event.preventDefault();
                 if (event.currentTarget.checked) {
@@ -94,6 +115,17 @@
                     input_amount_out.value = ""
                     input_amount_in.setAttribute("required", "");
                     input_amount_out.removeAttribute("required", "");
+                }
+            })
+
+            creditorCheckbox.addEventListener('change', (event) => {
+                event.preventDefault();
+                if (event.currentTarget.checked) {
+                    // alert('checked');
+                    creditor_item_element.classList.remove('d-none');
+                } else {
+                    // alert('not checked');
+                    creditor_item_element.classList.add('d-none')
                 }
             })
         </script>

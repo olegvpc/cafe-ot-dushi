@@ -15,6 +15,7 @@ class Payment extends Model
         'created_at', 'creator_id',
         'updated_at', 'updator_id',
         'image',
+        'creditor_id',
     ];
 
     /**
@@ -32,6 +33,10 @@ class Payment extends Model
     }
 
     public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function creditor(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

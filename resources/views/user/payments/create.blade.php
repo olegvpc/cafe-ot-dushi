@@ -13,7 +13,8 @@
 			</a>
 		</x-slot>
 	</x-title>
-    <x-payment.form action="{{ route('user.payments.store') }}" method="POST" enctype="multipart/form-data">
+    <x-payment.form action="{{ route('user.payments.store') }}"
+                    method="POST" enctype="multipart/form-data" :creditors="$creditors">
         {{ __('Create new payment')}}
     </x-payment.form>
 

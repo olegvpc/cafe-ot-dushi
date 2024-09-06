@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Cuisine;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -78,6 +79,17 @@ if(! function_exists('getAllCuisines')) {
     }
 }
 
+if(! function_exists('getAllCreditors')) {
+    function getAllCreditors(): array {
+        $userList = User::query()->get(['id', 'name'])->toArray();
+        $creditors = [];
+        foreach ($userList as $item) {
+            $creditors [$item['id']] = $item['name'];
+        }
+        return $creditors;
+    }
+}
+
 if(! function_exists('transaction')) {
     function transaction(\Closure $callback, int $attempts = 1)
     {
@@ -92,10 +104,16 @@ if(! function_exists('transaction')) {
 if(! function_exists('saveImageIn')) {
     function saveImageIn($request, string $folder): string
     {
-        // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
+        // Сохраняем файл в папку $folder коротая будет создана в пути starage/app/public
         $file = $request->file('image');
+        $datePathName = now()->format('Y-m-d');
         if ($file) {
-            $pathToImageString = $request->file('image')->storeAs($folder, $file->getClientOriginalName(), 'public');
+            if ($folder === 'payment-images') {
+                $dateName = $datePathName . "-" . $file->getClientOriginalName();
+                $pathToImageString = $file->storeAs($folder, $dateName, 'public');
+            } else {
+                $pathToImageString = $file->storeAs($folder, $file->getClientOriginalName(), 'public');
+            }
         } else {
             $pathToImageString = 'images/no-image.jpeg';
         }
