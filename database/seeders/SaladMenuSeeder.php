@@ -47,7 +47,7 @@ class SaladMenuSeeder extends Seeder
                 'description' => 'Классический тайский салат на основе рисовой лапши',
                 'price' => 120,
                 'cuisine_id' => 'THAI',
-                'category_id'=> 'SALAD',
+                'category_id'=> 'MAIN',
                 'active' => true,
                 'image' => 'menu-images/salad-pad-thai.jpg'
             ],

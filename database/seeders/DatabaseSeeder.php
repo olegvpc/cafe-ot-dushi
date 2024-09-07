@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
                     AlcoholMenuSeeder::class,
                     TableSeeder::class,
                     DissertMenuSeeder::class,
+                    StarterMenuSeeder::class
                 ]);
                 DB::commit();
             });

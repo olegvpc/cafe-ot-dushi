@@ -109,8 +109,12 @@ class OrderController extends Controller
             $query->where('category_id', $category);
         }
         $query->orderBy('sort', 'ASC')->orderBy('id', 'ASC');
-
-        $menus = $query->paginate(10);
+        // если выбрана категория, то паджинацию не включаем
+        if ($category = $validated['category'] ?? null) {
+            $menus = $query->get();
+        } else {
+            $menus = $query->paginate(10);
+        }
 
         $orderMenusJson = $order->menus;
         $orderMenus = json_decode($orderMenusJson);

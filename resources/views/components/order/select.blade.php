@@ -39,8 +39,11 @@
         </li>
     @endforeach
 </ul>
-{{--    выводим встренную в Laravel паджинацию--}}
-{{ $menus->links() }}
+{{--    выводим встренную в Laravel паджинацию если меню без фильтра с категориями --}}
+@if(!request()->query("category"))
+    {{ $menus->links() }}
+@endif
+
 <h3>
     {{ __('Selected dish / จานที่เลือก') }}
 </h3>
