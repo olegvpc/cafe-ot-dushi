@@ -82,7 +82,7 @@ if(! function_exists('getAllCuisines')) {
 if(! function_exists('getAllCreditors')) {
     function getAllCreditors(): array {
         $userList = User::query()->get(['id', 'name'])->toArray();
-        $creditors = ['NULL'=> NULL];
+//        $creditors = ['NULL'=> NULL];
         foreach ($userList as $item) {
             $creditors [$item['id']] = $item['name'];
         }
