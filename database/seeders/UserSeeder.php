@@ -30,6 +30,12 @@ class UserSeeder extends Seeder
                 'admin' => true
             ],
             [
+                'name' => 'Надежда',
+                'email' => 'nadezhda.tkach@gmail.com',
+                'password' => bcrypt('12345'),
+                'admin' => true
+            ],
+            [
                 'name' => 'Николай',
                 'email' => 'nikolaiinbox@mail.ru',
                 'password' => bcrypt('12345'),
