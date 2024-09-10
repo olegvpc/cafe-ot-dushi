@@ -16,6 +16,24 @@ class BreakfastMenuSeeder extends Seeder
         // images/no-image.jpeg
         $specials = [
             [
+                'title' => 'Овсянка / Oatmeal / ข้าวโอ๊ต',
+                'description' => 'Классическая овсянка',
+                'price' => 75,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'BREAKFAST',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Овсянка с фруктами / Oatmeal with fruit / ข้าวโอ๊ตกับผลไม้',
+                'description' => 'Классическая овсянка с фруктами (манго и банан)',
+                'price' => 100,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'BREAKFAST',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
                 'title' => 'Английский завтрак / English breakfast / อาหารเช้าแบบอังกฤษ',
                 'description' => '<ul><li>Жареные яйца / Fried egg</li><li>Тост / Toast</li><li>Ветчина и сосиски/ Ham and sausages</li><li>Картошка фри / French fries</li><li>Напиток / Drink</li></ul>',
                 'price' => 150,
@@ -30,7 +48,7 @@ class BreakfastMenuSeeder extends Seeder
                 'price' => 150,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
-                'active' => true,
+                'active' => false,
                 'image' => 'menu-images/special-american.jpg'
             ],
             [
@@ -45,7 +63,7 @@ class BreakfastMenuSeeder extends Seeder
             [
                 'title' => 'Блины (сгущенка, джем, шоколад) / Pancakes (condensed milk, jam, chocolate) / แพนเค้ก',
                 'description' => 'Блины (сгущенка, джем, шоколад)',
-                'price' => 80,
+                'price' => 90,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
                 'active' => true,
@@ -54,7 +72,7 @@ class BreakfastMenuSeeder extends Seeder
             [
                 'title' => 'Блины с ветчиной и сыром / Pancakes with ham and cheese / แพนเค้กกับแฮมและชีส',
                 'description' => 'Блины с ветчиной и сыром',
-                'price' => 110,
+                'price' => 120,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
                 'active' => true,
@@ -78,34 +96,6 @@ class BreakfastMenuSeeder extends Seeder
                 'active' => true,
                 'image' => 'images/no-image.jpeg'
             ],
-            [
-                'title' => 'Блины с мясом (свинина) и грибами / Pancakes with pork and mushrooms / แพนเค้กกับหมูและเห็ด',
-                'description' => 'Блины с мясом (свинина) и грибами',
-                'price' => 140,
-                'cuisine_id' => 'ALL',
-                'category_id'=> 'BREAKFAST',
-                'active' => true,
-                'image' => 'images/no-image.jpeg'
-            ],
-            [
-                'title' => 'Комплексный обед №1 / Set lunch №1 / ชุดอาหารกลางวัน 1',
-                'description' => '<ul><li>Салат Витаминный / Salad</li><li>Борщ / Soup</li><li>Куриная котлета в панировке с гарниром / Chicken patty-burger with side dish</li><li>Компот клубничный / Homemade strawberry drink</li></ul>',
-                'price' => 229,
-                'cuisine_id' => 'ALL',
-                'category_id'=> 'SPECIAL',
-                'active' => true,
-                'image' => 'menu-images/special-01.jpg'
-            ],
-            [
-                'title' => 'Комплексный обед №2 / Set lunch №2 / ชุดอาหารกลางวัน 2',
-                'description' => '<ul><li>Салат Витаминный / Salad</li><li>Суп куриный / Checken Soup</li><li>Стейк из курицы с гарниром / Chicken steak with side dish</li><li>Компот клубничный / Homemade strawberry drink</li></ul>',
-                'price' => 229,
-                'cuisine_id' => 'ALL',
-                'category_id'=> 'SPECIAL',
-                'active' => true,
-                'image' => 'menu-images/special-02.jpg'
-            ],
-
         ];
         foreach ($specials as $dish) {
             Menu::query()->firstOrCreate([

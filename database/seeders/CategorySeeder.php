@@ -19,58 +19,58 @@ class CategorySeeder extends Seeder
             [
                 'id' => 'BREAKFAST',
                 'name' => 'Завтраки / Breakfast / อาหารเช้า',
-                'sort' => 960
-            ],
-            [
-                'id' => 'SPECIAL',
-                'name' => 'Комплексные / Set / ชุด',
-                'sort' => 970
-            ],
-            [
-                'id' => 'BURGERS',
-                'name' => 'Бургеры / Burgers / เบอร์เกอร์',
-                'sort' => 975
+                'sort' => 500
             ],
             [
                 'id' => 'SALAD',
                 'name' => 'Салаты / Salad / สลัด',
-                'sort' => 980
+                'sort' => 550
             ],
             [
                 'id' => 'STARTER',
                 'name' => 'Закуски / Starter / สตาร์ทเตอร์',
-                'sort' => 985
+                'sort' => 600
             ],
             [
                 'id' => 'SOUP',
                 'name' => 'Супы / Soup / ซุป',
-                'sort' => 987
+                'sort' => 650
             ],
             [
                 'id' => 'MAIN',
                 'created_at' => null,
                 'name' => 'Главное блюдо / Main cource / อาหารจานหลัก',
-                'sort' => 990
+                'sort' => 700
+            ],
+            [
+                'id' => 'SPECIAL',
+                'name' => 'Комплексные / Set / ชุด',
+                'sort' => 750
             ],
             [
                 'id' => 'GARNISH',
                 'created_at' => null,
                 'name' => 'Гарниры / Garnish / ตกแต่ง',
-                'sort' => 991
-            ],
-            [
-                'id' => 'DRINK',
-                'name' => 'Напитки / Drink/ เครื่องดื่ม',
-                'sort' => 993
+                'sort' => 800
             ],
             [
                 'id' => 'DISSERT',
                 'name' => 'Дессерт / Dissert / วิทยานิพนธ์',
-                'sort' => 995
+                'sort' => 850
+            ],
+            [
+                'id' => 'DRINK',
+                'name' => 'Напитки / Drink/ เครื่องดื่ม',
+                'sort' => 900
             ],
             [
                 'id' => 'ALCOHOL',
                 'name' => 'Алкоголь / Alcohol / แอลกอฮอล์',
+                'sort' => 950
+            ],
+            [
+                'id' => 'KIDS',
+                'name' => 'Бургеры / Burgers / เบอร์เกอร์',
                 'sort' => 999
             ],
         ];

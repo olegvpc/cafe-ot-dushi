@@ -380,15 +380,17 @@ class OrderController extends Controller
             'table_id' => $tableId,
             'order_id' => $order->id,
             'total_price' => $totalPrice,
+            'order_created_at' => $order->created_at,
         ];
         // устанавливаем кастомное значение размера pdf для чека
-        CPDF::$PAPER_SIZES['8x16'] = array(0.0, 0.0, 209.76, 600.64);
+//        CPDF::$PAPER_SIZES['8x16'] = array(0.0, 0.0, 209.76, 600.64);
 
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('/user/orders/print-pdf', ['data' => $data])
             ->setOption('zoom', 1)
             ->setOption('dpi', 150)
-            ->setPaper('8x16', 'portrait');
+            ->setPaper('A4', 'portrait');
+//            ->setPaper('8x16', 'portrait');
 //            ->setOption('footer-center', '')
 //            ->setOption('footer-font-size', 5);
         $pdf->setOptions([
@@ -397,7 +399,8 @@ class OrderController extends Controller
             'fontHeightRatio' => 1,
             'isPhpEnabled' => true,
         ]);
-        $data = now()->format('H-i-s');
+//        return view('user/orders/print-pdf', compact(['data']));
+        $data = now()->format('Y-m-d-H-i-s');
         $fileName = 'table-' . $tableId . '-' . $data . '.pdf';
         $path = public_path('/dompdf/'); // public/order-pdf/
 //        $pdf->save($path . $fileName); // сохраняет на сервер

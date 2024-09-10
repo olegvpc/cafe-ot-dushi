@@ -16,6 +16,15 @@ class SoupMenuSeeder extends Seeder
         // images/no-image.jpeg
         $soups = [
             [
+                'title' => 'Куриный бульен / Chicken broth / น้ำซุปไก่',
+                'description' => 'Куриный бульен - Вкусный и полезный суп.',
+                'price' => 95,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'SOUP',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
                 'title' => 'Борщ / Russian beetroot soup / ซุปบีทรูท',
                 'description' => 'Вкусный и полезный суп.',
                 'price' => 95,
@@ -25,9 +34,9 @@ class SoupMenuSeeder extends Seeder
                 'image' => 'menu-images/soup-borch.jpg'
             ],
             [
-                'title' => 'Куриный суп / Chicken soup / ซุปไก่',
+                'title' => 'Куриный суп с лапшой / Chicken noodle soup / ก๋วยเตี๋ยวไก่',
                 'description' => 'Вкусный суп на наваристом курином бульоне и итальянской лапше.',
-                'price' => 80,
+                'price' => 90,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'SOUP',
                 'active' => true,
@@ -39,7 +48,7 @@ class SoupMenuSeeder extends Seeder
                 'price' => 90,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'SOUP',
-                'active' => true,
+                'active' => false,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -49,7 +58,7 @@ class SoupMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'SOUP',
                 'active' => true,
-                'image' => 'menu-images/soup-mushroom.jpg'
+                'image' => 'images/no-image.jpeg'
             ],
             [
                 'title' => 'Грибной крем суп / Mushroom cream soup / ซุปครีมเห็ด',
@@ -57,13 +66,13 @@ class SoupMenuSeeder extends Seeder
                 'price' => 110,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'SOUP',
-                'active' => true,
-                'image' => 'menu-images/soup-mushroom.jpg'
+                'active' => false,
+                'image' => 'images/no-image.jpeg'
             ],
             [
                 'title' => 'Суп Том Ям куриный / Tom kha Yam chicken soup / ต้มยำไก่',
                 'description' => 'Кисло-острый суп на основе куриного бульона и кокосового молока с курицей',
-                'price' => 100,
+                'price' => 120,
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'SOUP',
                 'active' => true,
@@ -90,7 +99,7 @@ class SoupMenuSeeder extends Seeder
             [
                 'title' => 'Суп Том Кха куриный / Tom kha kai chicken soup / ต้มข่าไก่',
                 'description' => 'Кисло-острый суп на основе куриного бульона и кокосового молока с курицей',
-                'price' => 110,
+                'price' => 120,
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'SOUP',
                 'active' => true,

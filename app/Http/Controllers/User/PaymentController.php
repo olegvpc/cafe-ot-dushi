@@ -176,7 +176,6 @@ class PaymentController extends Controller
         if (!$request->input('creditor_check')) {
             $validated['creditor_id'] = NULL;
         }
-//        dd($request->input('creditor_check'), $validated);
         // Сохраняем файл в папку 'uploads' коротая будет создана в пути starage/app/public
         $imagePath = saveImageIn($request, 'payment-images');
 
@@ -196,9 +195,6 @@ class PaymentController extends Controller
 
                 if ($amountIn = $validated['amount_in']?? null) {
                     $payment->amount_in = $amountIn;
-                }
-                if ($creditorId = $validated['creditor_id']?? null) {
-                    $payment->creditor_id = $creditorId;
                 }
 
                 $payment->save();
@@ -292,7 +288,6 @@ class PaymentController extends Controller
                     $payment->amount_out = NULL;
                 }
                 if ($creditorId = $validated['creditor_id']?? null) {
-                    $payment->creditor_id = $creditorId;
                     $creditor->user_id = $creditorId;
                     $creditor->update();
                 }

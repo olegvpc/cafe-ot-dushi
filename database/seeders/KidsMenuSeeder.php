@@ -6,7 +6,7 @@ use App\Models\Menu;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class BurgerMenuSeeder extends Seeder
+class KidsMenuSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,8 +20,8 @@ class BurgerMenuSeeder extends Seeder
                 'description' => 'Хот Дог.',
                 'price' => 100,
                 'cuisine_id' => 'ALL',
-                'category_id'=> 'BURGERS',
-                'active' => true,
+                'category_id'=> 'KIDS',
+                'active' => false,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -29,8 +29,8 @@ class BurgerMenuSeeder extends Seeder
                 'description' => 'Клаб сэндвич с ветчиной.',
                 'price' => 120,
                 'cuisine_id' => 'ALL',
-                'category_id'=> 'BURGERS',
-                'active' => true,
+                'category_id'=> 'KIDS',
+                'active' => false,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -38,8 +38,8 @@ class BurgerMenuSeeder extends Seeder
                 'description' => 'Клаб сэндвич с курицей.',
                 'price' => 120,
                 'cuisine_id' => 'ALL',
-                'category_id'=> 'BURGERS',
-                'active' => true,
+                'category_id'=> 'KIDS',
+                'active' => false,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -47,8 +47,8 @@ class BurgerMenuSeeder extends Seeder
                 'description' => 'Гамбургер с курицей и картошка фри.',
                 'price' => 130,
                 'cuisine_id' => 'ALL',
-                'category_id'=> 'BURGERS',
-                'active' => true,
+                'category_id'=> 'KIDS',
+                'active' => false,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -56,8 +56,8 @@ class BurgerMenuSeeder extends Seeder
                 'description' => 'Гамбургер с рыбой и картошка фри.',
                 'price' => 140,
                 'cuisine_id' => 'ALL',
-                'category_id'=> 'BURGERS',
-                'active' => true,
+                'category_id'=> 'KIDS',
+                'active' => false,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -65,8 +65,8 @@ class BurgerMenuSeeder extends Seeder
                 'description' => 'Гамбургер со свининой и картошка фри.',
                 'price' => 140,
                 'cuisine_id' => 'ALL',
-                'category_id'=> 'BURGERS',
-                'active' => true,
+                'category_id'=> 'KIDS',
+                'active' => false,
                 'image' => 'images/no-image.jpeg'
             ],
 

@@ -27,18 +27,19 @@ class DatabaseSeeder extends Seeder
                 $this->call([
                     UserSeeder::class,
                     CategorySeeder::class,
-                    CuisineSeeder::class,
-                    DrinkMenuSeeder::class,
-                    SaladMenuSeeder::class,
-                    SoupMenuSeeder::class,
-                    GarnishMenuSeeder::class,
-                    BurgerMenuSeeder::class,
-                    MainMenuSeeder::class,
-                    BreakfastMenuSeeder::class,
-                    AlcoholMenuSeeder::class,
                     TableSeeder::class,
+                    CuisineSeeder::class,
+                    BreakfastMenuSeeder::class,
+                    SaladMenuSeeder::class,
+                    StarterMenuSeeder::class,
+                    SoupMenuSeeder::class,
+                    MainMenuSeeder::class,
+                    SpecialMenuSeader::class,
+                    GarnishMenuSeeder::class,
                     DissertMenuSeeder::class,
-                    StarterMenuSeeder::class
+                    DrinkMenuSeeder::class,
+                    AlcoholMenuSeeder::class,
+                    KidsMenuSeeder::class,
                 ]);
                 DB::commit();
             });

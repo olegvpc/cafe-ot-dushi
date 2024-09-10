@@ -27,7 +27,7 @@ class GarnishMenuSeeder extends Seeder
             [
                 'title' => 'Отварной рис / Сooked rice / ข้าว',
                 'description' => 'Отварной рис',
-                'price' => 60,
+                'price' => 40,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'GARNISH',
                 'active' => true,
@@ -36,7 +36,7 @@ class GarnishMenuSeeder extends Seeder
             [
                 'title' => 'Картофель фри / French fries / เฟรนช์ฟรายส์',
                 'description' => 'Картофель фри',
-                'price' => 70,
+                'price' => 50,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'GARNISH',
                 'active' => true,
@@ -52,7 +52,7 @@ class GarnishMenuSeeder extends Seeder
                 'image' => 'images/no-image.jpeg'
             ],
             [
-                'title' => 'Гречка отборная / Buckwheat / บัควีท',
+                'title' => 'Гречка / Buckwheat / บัควีท',
                 'description' => 'Гречка отборная',
                 'price' => 90,
                 'cuisine_id' => 'ALL',

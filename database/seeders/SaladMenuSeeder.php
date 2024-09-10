@@ -16,6 +16,33 @@ class SaladMenuSeeder extends Seeder
         // images/no-image.jpeg
         $salads = [
             [
+                'title' => 'Витиминный салат / Green salad / สลัดผักสด',
+                'description' => 'Закусочный салат для ЗОЖ',
+                'price' => 80,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'SALAD',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Морковный салат / Carrot salad / สลัดแครอท',
+                'description' => 'Закусочный салат для ЗОЖ',
+                'price' => 80,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'SALAD',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Овощной салат / Vegetable salad / สลัดผัก',
+                'description' => 'Закусочный салат для ЗОЖ - огурцы, помидоры',
+                'price' => 90,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'SALAD',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
                 'title' => 'Салат Оливье/ Olivie salad / สลัดโอลิเวีย',
                 'description' => 'Закусочный салат русской кухни из отварных корнеплодов, солёных огурцов, яиц с мясом или варёной колбасой в майонезной заправке.',
                 'price' => 80,
@@ -32,6 +59,24 @@ class SaladMenuSeeder extends Seeder
                 'category_id'=> 'SALAD',
                 'active' => true,
                 'image' => 'menu-images/salad-chicken.jpg'
+            ],
+            [
+                'title' => 'Селедочка под шубой / Herring under a fur coat / แฮร์ริ่ง',
+                'description' => 'Знаменитый новогодний салат',
+                'price' => 140,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'SALAD',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Салат с тунцом / Tuna salad / สลัดทูน่า',
+                'description' => 'Салат с тунцом',
+                'price' => 120,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'SALAD',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
             ],
             [
                 'title' => 'Папая салат Som Tam / Papaya salad Som Tam / ส้มตำ',
@@ -59,6 +104,15 @@ class SaladMenuSeeder extends Seeder
                 'category_id'=> 'SALAD',
                 'active' => true,
                 'image' => 'menu-images/salad-crab-sticks.jpg'
+            ],
+            [
+                'title' => 'Салат с морепродуктами / Seafood salad / สลัดทะเล',
+                'description' => 'Салат с тунцом',
+                'price' => 150,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'SALAD',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
             ],
         ];
         foreach ($salads as $dish) {
