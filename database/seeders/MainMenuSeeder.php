@@ -94,7 +94,7 @@ class MainMenuSeeder extends Seeder
                 'price' => 190,
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
-                'active' => false,
+                'active' => true,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -166,7 +166,7 @@ class MainMenuSeeder extends Seeder
                 'price' => 190,
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
-                'active' => false,
+                'active' => true,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -175,7 +175,7 @@ class MainMenuSeeder extends Seeder
                 'price' => 150,
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
-                'active' => false,
+                'active' => true,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -184,7 +184,7 @@ class MainMenuSeeder extends Seeder
                 'price' => 70,
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
-                'active' => false,
+                'active' => true,
                 'image' => 'images/no-image.jpeg'
             ],
             [
@@ -193,7 +193,7 @@ class MainMenuSeeder extends Seeder
                 'price' => 90,
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
-                'active' => false,
+                'active' => true,
                 'image' => 'images/no-image.jpeg'
             ],
         ];

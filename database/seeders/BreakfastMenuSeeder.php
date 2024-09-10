@@ -58,7 +58,7 @@ class BreakfastMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/special-russian.jpg'
             ],
             [
                 'title' => 'Блины (сгущенка, джем, шоколад) / Pancakes (condensed milk, jam, chocolate) / แพนเค้ก',
@@ -76,7 +76,7 @@ class BreakfastMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-pancakes-hum.jpg'
             ],
             [
                 'title' => 'Блины с курицей / Pancakes with chicken / แพนเค้กกับไก่',
@@ -85,7 +85,7 @@ class BreakfastMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-pancakes-chicken.jpg'
             ],
             [
                 'title' => 'Блины с мясом (свинина) / Pancakes with pork / แพนเค้กหมู',
@@ -94,7 +94,7 @@ class BreakfastMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-pancakes-chicken.jpg'
             ],
         ];
         foreach ($specials as $dish) {

@@ -70,7 +70,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => 'KIDS',
-                'name' => 'Бургеры / Burgers / เบอร์เกอร์',
+                'name' => 'Детское меню / Kids menu / เมนูเด็ก',
                 'sort' => 999
             ],
         ];
