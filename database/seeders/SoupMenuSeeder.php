@@ -34,6 +34,15 @@ class SoupMenuSeeder extends Seeder
                 'image' => 'menu-images/soup-borch.jpg'
             ],
             [
+                'title' => 'Солянка / Solyanka / โซลยานกา',
+                'description' => 'Вкусный и полезный суп.',
+                'price' => 95,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'SOUP',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
                 'title' => 'Куриный суп с лапшой / Chicken noodle soup / ก๋วยเตี๋ยวไก่',
                 'description' => 'Вкусный суп на наваристом курином бульоне и итальянской лапше.',
                 'price' => 90,

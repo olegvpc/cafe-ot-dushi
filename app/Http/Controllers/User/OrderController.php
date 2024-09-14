@@ -390,9 +390,7 @@ class OrderController extends Controller
             ->setOption('zoom', 1)
             ->setOption('dpi', 150)
             ->setPaper('A4', 'portrait');
-//            ->setPaper('8x16', 'portrait');
-//            ->setOption('footer-center', '')
-//            ->setOption('footer-font-size', 5);
+
         $pdf->setOptions([
             'dpi' => 150,
             'defaultFont' => 'sans-serif',

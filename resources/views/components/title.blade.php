@@ -1,4 +1,4 @@
-<div class="pb-3 border-bottom mb-4" >
+<div class="pb-2 border-bottom mb-4" >
     @isset($link)
         {{ $link }}
     @endisset

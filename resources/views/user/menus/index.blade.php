@@ -37,5 +37,7 @@
 {{--    @include('includes.filter')--}}
 
     {{--    выводим встренную в Laravel паджинацию--}}
-    {{ $menus->links() }}
+    @if(!(request()->query("category_id") || request()->query("cuisine_id")))
+        {{ $menus->links() }}
+    @endif
 @endsection

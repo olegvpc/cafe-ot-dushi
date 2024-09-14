@@ -59,10 +59,6 @@
                 float: right;
             }
             .invoice-header {
-                /*display: flex;*/
-                /*flex-direction: row;*/
-                /*justify-content: space-between;*/
-                /*display: inline;*/
                 margin: 5px;
                 /*clear: both;*/
             }
@@ -83,6 +79,7 @@
             }
             .date {
                 width: 50%;
+                text-align: center;
                 font-size: 10px;
             }
             .m-1 {
@@ -96,10 +93,10 @@
         <div class="body-container">
             <div class="container left-element">
                 <h3 class="company-name">Cafe "Ot Dushi"</h3> <br>
+                <div class="date">{{ $data['order_created_at']->format('d F H:i') }}</div><br>
                 <div class="invoice-header">
                     {{--                <img class="logo" src="{{ asset('/img/sheff-logo.png') }}" alt="Company Logo"><br>--}}
                     <div class="fw-bold left-element">{{ __('Table') }}: {{ $data['table_id'] }}</div>
-                    <div class="date">{{ $data['order_created_at']->format('Y-m-d-H-i-s') }}</div>
                     <div class="fw-bold right-element">{{ __('Order') }}: {{ $data['order_id'] }}</div>
                 </div><br>
 
@@ -123,10 +120,10 @@
             </div>
             <div class="container right-element">
                 <h3 class="company-name">Cafe "Ot Dushi"</h3> <br>
+                <div class="date">{{ $data['order_created_at']->format('d F H:i') }}</div><br>
                 <div class="invoice-header">
                     {{--                <img class="logo" src="{{ asset('/img/sheff-logo.png') }}" alt="Company Logo"><br>--}}
                     <div class="fw-bold left-element">{{ __('Table') }}: {{ $data['table_id'] }}</div>
-                    <div class="date">{{ $data['order_created_at']->format('Y-m-d-H-i-s') }}</div>
                     <div class="fw-bold right-element">{{ __('Order') }}: {{ $data['order_id'] }}</div>
                 </div><br>
 

@@ -37,9 +37,11 @@ class MenuController extends Controller
                     $query->where('cuisine_id', $cuisine_id_presents);
                 }
             }
-//            $query->orderBy('sort', 'ASC');
-
-            $menus = $query->paginate(12);
+            if (($validated['category_id']?? null) || ($validated['cuisine_id']?? null)) {
+                $menus = $query->get();
+            } else {
+                $menus = $query->paginate(12);
+            }
 
         } else {
             $menus = collect([]);

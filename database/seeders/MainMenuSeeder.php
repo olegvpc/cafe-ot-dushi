@@ -196,6 +196,33 @@ class MainMenuSeeder extends Seeder
                 'active' => true,
                 'image' => 'images/no-image.jpeg'
             ],
+            [
+                'title' => 'Мидии в сырном соусе / Mussels in cheese sauce / หอยแมลงภู่ในซอสชีส',
+                'description' => 'Мидийное место - Мидии в сырном соусе',
+                'price' => 190,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => false,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Мидии в соусе том-ям / Mussels in tom yum sauce / หอยแมลงภู่ในซอสต้มยำ',
+                'description' => 'Мидийное место - Мидии в соусе том-яме',
+                'price' => 190,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => false,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Мидии в грибном соусе / Mussels in mushroom sauce / หอยแมลงภู่ในซอสเห็ด',
+                'description' => 'Мидийное место - Мидии в грибном соусе',
+                'price' => 190,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => false,
+                'image' => 'images/no-image.jpeg'
+            ],
         ];
         foreach ($maines as $dish) {
             Menu::query()->firstOrCreate([
