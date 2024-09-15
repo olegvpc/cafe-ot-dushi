@@ -22,7 +22,7 @@ class SaladMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'SALAD',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/salad-garbage.jpeg'
             ],
             [
                 'title' => 'Морковный салат / Carrot salad / สลัดแครอท',
@@ -31,7 +31,7 @@ class SaladMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'SALAD',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/salad-carrot.jpeg'
             ],
             [
                 'title' => 'Овощной салат / Vegetable salad / สลัดผัก',
@@ -40,7 +40,7 @@ class SaladMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'SALAD',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/salad-vedgitable.jpeg'
             ],
             [
                 'title' => 'Салат Оливье/ Olivie salad / สลัดโอลิเวีย',
@@ -67,7 +67,7 @@ class SaladMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'SALAD',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/salad-seledka.jpg'
             ],
             [
                 'title' => 'Салат с тунцом / Tuna salad / สลัดทูน่า',

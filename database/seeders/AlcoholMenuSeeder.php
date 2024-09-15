@@ -77,7 +77,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/drink-beer-chang-draft.jpeg'
             ],
             [
                 'title' => 'Вино белое Pter vella (150 gr) / White wine Pter vella / ไวน์ขาว',
@@ -95,7 +95,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-toldos.jpg'
             ],
             [
                 'title' => 'Вино белое Vina Toldos (700 gr) / White wine Vina Toldos / ไวน์ขาว',
@@ -104,7 +104,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-toldos.jpg'
             ],
             [
                 'title' => 'Вино белое Diablos (150 gr) / White wine Diablos / ไวน์ขาว',
@@ -113,7 +113,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-diablos.jpg'
             ],
             [
                 'title' => 'Вино белое Diablos (700 gr) / White wine Diablos / ไวน์ขาว',
@@ -122,7 +122,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-diablos.jpg'
             ],
             [
                 'title' => 'Вино розовое Meline (150 gr) / Rose wine Meline / ไวน์กุหลาบเมลีน',
@@ -131,7 +131,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-meline.jpg'
             ],
             [
                 'title' => 'Вино розовое Meline (700 gr) / Rose wine Meline / ไวน์กุหลาบเมลีน',
@@ -140,7 +140,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-meline.jpg'
             ],
             [
                 'title' => 'Вино красное Le pettit Balthazar (150 gr) / Red wine Le pettit Balthazar / ไวน์แดง',
@@ -149,7 +149,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-balthazar.jpg'
             ],
             [
                 'title' => 'Вино красное Le pettit Balthazar (700 gr) / Red wine Le pettit Balthazar / ไวน์แดง',
@@ -158,7 +158,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-balthazar.jpg'
             ],
             [
                 'title' => 'Вино красное Veneto (150 gr) / Red wine Veneto/ ไวน์แดง',
@@ -167,7 +167,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-merlo.jpg'
             ],
             [
                 'title' => 'Вино красное Veneto (700 gr) / Red wine Veneto / ไวน์แดง',
@@ -176,7 +176,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vine-merlo.jpg'
             ],
             [
                 'title' => 'Ром Sang Som (100 gr)/ Rum Sang Som / แสงโสม',
@@ -194,7 +194,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-rum-hong-thong.jpeg'
             ],
             [
                 'title' => 'Ballantines whisky (100 gr)/ Ballantines whisky / วิสกี้บัลแลนไทน์',
@@ -203,7 +203,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-rum-balantais.jpg'
             ],
             [
                 'title' => 'Водка Кулов/ Vodka Kulov / วอดก้า',
@@ -212,7 +212,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => false,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-vodka-kulov.jpeg'
             ],
             [
                 'title' => 'Мохито алкогольный / Mojito alcoholic / โมฮิโต้แอลกอฮอล์',

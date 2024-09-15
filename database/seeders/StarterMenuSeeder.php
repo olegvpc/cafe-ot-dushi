@@ -22,7 +22,7 @@ class StarterMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'STARTER',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-bread.jpeg'
             ],
             [
                 'title' => 'Луковые кольца во фритюре / Deep fried onion rings / หัวหอมทอด',
@@ -49,7 +49,7 @@ class StarterMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'STARTER',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/salad-fried-sromp-garlic.jpg'
             ],
             [
                 'title' => 'Вареные креветки / Boiled shrimp / กุ้งต้ม',

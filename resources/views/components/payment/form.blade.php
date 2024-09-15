@@ -15,7 +15,7 @@
 
 	<x-form-item>
 		<x-label required>{{ __('Description') }}</x-label>
-		<x-trix name="description" value="{{ $payment->description ?? ''}}" />
+        <x-textarea rows="1" name="description">{{$payment->description?? ''}}</x-textarea>
 
 		<x-error name='description' />
 	</x-form-item>

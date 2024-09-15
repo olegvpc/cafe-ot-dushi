@@ -3,6 +3,7 @@
 use App\Models\Category;
 use App\Models\Cuisine;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -22,6 +23,17 @@ if(! function_exists('active_link')) {
         return Route::is($name) ? $active : '' ;
     }
 }
+
+if(! function_exists('is_admin')) {
+    function is_admin(): bool
+    {
+        if (Auth::check()) {
+            return Auth::user()->admin;
+        }
+        return false;
+    }
+}
+
 if(! function_exists('alert')) {
     function alert(string $text_alert, $alert_status = 'info')
     {

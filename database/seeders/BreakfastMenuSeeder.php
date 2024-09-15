@@ -22,7 +22,7 @@ class BreakfastMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/breakfast-cereal-oat.jpeg'
             ],
             [
                 'title' => 'Овсянка с фруктами / Oatmeal with fruit / ข้าวโอ๊ตกับผลไม้',
@@ -31,7 +31,7 @@ class BreakfastMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/breakfast-cereal-oat.jpeg'
             ],
             [
                 'title' => 'Английский завтрак / English breakfast / อาหารเช้าแบบอังกฤษ',
@@ -67,7 +67,7 @@ class BreakfastMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'BREAKFAST',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/breakfast-pancakes-jam.jpg'
             ],
             [
                 'title' => 'Блины с ветчиной и сыром / Pancakes with ham and cheese / แพนเค้กกับแฮมและชีส',

@@ -36,20 +36,16 @@
                 <li class="nav-item">
                     @auth('web')
                         <div class="nav-link">
-                            {{ auth()->user()->name }} : {{ auth()->user()->email }}
+                            {{ auth()->user()->name }}
                         </div>
                     @endauth
-
                     @auth('web')
-                        <a href="{{ route('register') }}" class="nav-link {{ active_link('register') }}" >
+                        <a href="{{ route('register') }}" class="nav-link {{ is_admin() ? '' : 'd-none' }} {{ active_link('register') }}" >
                             {{ __('Регистрация') }}
                         </a>
                     @endauth
                 </li>
                 <li class="nav-item">
-{{--                    <a href="{{ route('login') }}" class="nav-link {{ Route::is('login') ? 'active' : '' }}">--}}
-{{--                        {{ __("Вход") }}--}}
-{{--                    </a>--}}
                     @auth('web')
                         <a href="{{ route('logout') }}" class="nav-link" >
                             {{ __('Выход')}}

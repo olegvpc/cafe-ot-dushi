@@ -1,8 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.simple')
 
 @section('page.title', 'Create Payment')
 
-@section('main.content')
+@section('simple.content')
 
 	<x-title>
 		{{ __('Create Payment / สร้างการชำระเงิน:') }}

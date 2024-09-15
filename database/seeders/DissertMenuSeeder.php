@@ -78,6 +78,51 @@ class DissertMenuSeeder extends Seeder
                 'active' => true,
                 'image' => 'menu-images/dissert-panakota.jpg'
             ],
+            [
+                'title' => 'Трайфл Orio / Trifle Orio / ไทรเฟิล โอริโอ้',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 99,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'menu-images/dissert-panakota.jpg'
+            ],
+            [
+                'title' => 'Трайфл Красный Бархат / Trifle Red Barkhat / ทริฟเฟิล เรด',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 99,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'menu-images/dissert-panakota.jpg'
+            ],
+            [
+                'title' => 'Зефир с манго / Marshmallow with mango / มาร์ชแมลโลว์กับมะม่วง',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Мороженое шарик в ассортименте / Ice cream ball / ไอศกรีมบอล',
+                'description' => 'Мороженое в ассортименте.',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Мороженое Банана сплит / Ice cream Banana split / ไอศกรีมบานาน่าสปลิท',
+                'description' => 'Мороженое Банана сплит',
+                'price' => 110,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
         ];
         foreach ($disserts as $dish) {
             Menu::query()->firstOrCreate([

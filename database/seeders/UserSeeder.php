@@ -48,8 +48,14 @@ class UserSeeder extends Seeder
                 'admin' => true
             ],
             [
-                'name' => 'Nn',
-                'email' => 'order@yandex.ru',
+                'name' => 'Nin',
+                'email' => 'nin@ya.ru',
+                'password' => bcrypt('12345'),
+                'admin' => false
+            ],
+            [
+                'name' => 'Nui',
+                'email' => 'nui@ya.ru',
                 'password' => bcrypt('12345'),
                 'admin' => false
             ]
