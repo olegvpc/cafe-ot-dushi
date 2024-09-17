@@ -123,7 +123,7 @@ class OrderController extends Controller
         if ($orderMenus) {
             foreach ($orderMenus as $dish) {
                 $selectedMenus[] = Menu::query()
-                    ->findOrFail($dish, ['id', 'title', 'price']);
+                    ->findOrFail($dish, ['id', 'title', 'price', 'image']);
             }
         }
 //        dd($selectedMenus);

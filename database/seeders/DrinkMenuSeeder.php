@@ -23,7 +23,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-mango.jpg'
+                'image' => 'menu-images/drink-shake-mango.jpeg'
             ],
             [
                 'title' => 'Шейк Арбузный / Watermelon shake / แตงโมปั่น',
@@ -32,7 +32,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-watermelon.jpg'
+                'image' => 'menu-images/drink-shake-watermelon.jpeg'
             ],
             [
                 'title' => 'Шейк ананасовый / Pineapple shake / สับปะรดปั่น',
@@ -41,7 +41,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-pinapple.jpg'
+                'image' => 'menu-images/drink-shake-pinapple.jpeg'
             ],
             [
                 'title' => 'Компот из клубники / Strawberry compote / เครื่องดื่มสตรอเบอร์รี่',
@@ -131,7 +131,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-tea-mug.jpg'
+                'image' => 'menu-images/drink-tee-cup.jpeg'
             ],
             [
                 'title' => 'Чай заварник / Tea kettle / กาน้ำชา',
@@ -140,7 +140,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-tea-mug.jpg'
+                'image' => 'menu-images/drink-tea-pot.jpeg'
             ],
             [
                 'title' => 'Кофе американо горячий / Hot americano coffee / กาแฟอเมริกาโน่ร้อน',
@@ -149,7 +149,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-cofe-americano.jpg'
+                'image' => 'menu-images/drink-coffee-americano.jpeg'
             ],
             [
                 'title' => 'Кофе эспрессо горячий / Hot espresso coffee / กาแฟเอสเพรสโซ่ร้อน',
@@ -158,7 +158,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-cofe-espresso.jpg'
+                'image' => 'menu-images/drink-coffee-espresso.jpeg'
             ],
             [
                 'title' => 'Кофе латте горячий / Hot latte coffee / กาแฟลาเต้ร้อน',
@@ -167,7 +167,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-cofe-latte.jpg'
+                'image' => 'menu-images/drink-coffee-latte.jpeg'
             ],
             [
                 'title' => 'Кофе капучино горячий / Hot cappuccino coffee / กาแฟคาปูชิโน่ร้อน',
@@ -185,7 +185,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-cofe-cold.jpg'
+                'image' => 'menu-images/drink-coffee-ice.jpeg'
             ],
             [
                 'title' => 'Мохито безалкогольный / Mojito non-alcoholic / โมฮิโต้ไม่มีแอลกอฮอล์',
@@ -194,7 +194,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-mohito.jpeg'
+                'image' => 'menu-images/drink-mokhito2.jpeg'
             ],
         ];
         foreach ($drinks as $dish) {

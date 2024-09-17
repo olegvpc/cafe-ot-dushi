@@ -25,6 +25,11 @@
                         <x-selected-price>
                             {{ $item->price }}
                         </x-selected-price>
+                        @isset($item->image)
+                            <div style="height: 50px">
+                                <img class="img-fluid img-thumbnail" width="90px" src="{{ asset('/storage/' . $item->image) }}" alt="Image Menu-Item">
+                            </div>
+                        @endisset
                         <x-button type="submit" class="btn-danger">
                             {{ __('Delete') }}
                         </x-button>

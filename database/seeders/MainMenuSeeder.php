@@ -23,7 +23,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-fried-rice-chicken.jpeg'
             ],
             [
                 'title' => 'Жареный рис со свининой / Fried rice with pork / ข้าวผัดหมู',
@@ -32,7 +32,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-fried-rice-pork.jpeg'
             ],
             [
                 'title' => 'Жареный рис с креветками / Fried rice with shrimp / ข้าวผัดกุ้ง',
@@ -95,7 +95,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-rice-pinapple.jpeg'
             ],
             [
                 'title' => 'Пельмени с курицей / Dumplings with chicken / เกี๊ยวกับไก่',
@@ -167,7 +167,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-pad-thai-shrimp.jpg'
             ],
             [
                 'title' => 'Пад-Тай со свининой / Pad Thai with pork / ผัดไทยหมู',
@@ -185,7 +185,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-cheburek.jpeg'
             ],
             [
                 'title' => 'Чебурек со свининой / Cheburek with pork / เชบูเร็กกับหมู',
@@ -194,7 +194,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-cheburek.jpeg'
             ],
             [
                 'title' => 'Мидии в сырном соусе / Mussels in cheese sauce / หอยแมลงภู่ในซอสชีส',

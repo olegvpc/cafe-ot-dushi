@@ -58,7 +58,7 @@ class StarterMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'STARTER',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-shrimp-boiled.jpeg'
             ],
             [
                 'title' => 'Креветки в кляре / Shrimp in batter / กุ้งในแป้ง',
@@ -67,7 +67,7 @@ class StarterMenuSeeder extends Seeder
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'STARTER',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-shrimp-in-tempura.jpg'
             ],
             [
                 'title' => 'Курица в кисло-сладком соусе / Chicken in sweet and sour sauce / ไก่ในซอสเปรี้ยวหวาน',
@@ -85,7 +85,7 @@ class StarterMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'STARTER',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-cucember.jpeg'
             ],
             [
                 'title' => 'Соления (помидоры) / Pickles (tomatoes) / ผักดอง (มะเขือเทศ)',
@@ -94,7 +94,7 @@ class StarterMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'STARTER',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-tomato.jpeg'
             ],
             [
                 'title' => 'Соления (капуста) / Pickles (cabbage) / ผักดอง (กะหล่ำปลี)',
@@ -103,7 +103,7 @@ class StarterMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'STARTER',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-garbage.jpeg'
             ],
             [
                 'title' => 'Соления микс / Pickles mix / ผักดองผสม',

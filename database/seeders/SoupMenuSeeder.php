@@ -16,13 +16,13 @@ class SoupMenuSeeder extends Seeder
         // images/no-image.jpeg
         $soups = [
             [
-                'title' => 'Куриный бульен / Chicken broth / น้ำซุปไก่',
-                'description' => 'Куриный бульен - Вкусный и полезный суп.',
+                'title' => 'Куриный бульон / Chicken broth / น้ำซุปไก่',
+                'description' => 'Куриный бульон - Вкусный и полезный суп.',
                 'price' => 95,
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'SOUP',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/soup-bulion.jpeg'
             ],
             [
                 'title' => 'Борщ / Russian beetroot soup / ซุปบีทรูท',
@@ -40,7 +40,7 @@ class SoupMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'SOUP',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/soup-solyanka.jpg'
             ],
             [
                 'title' => 'Куриный суп с лапшой / Chicken noodle soup / ก๋วยเตี๋ยวไก่',
@@ -67,7 +67,7 @@ class SoupMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'SOUP',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/soup-okroshka.jpeg'
             ],
             [
                 'title' => 'Грибной крем суп / Mushroom cream soup / ซุปครีมเห็ด',
@@ -76,7 +76,7 @@ class SoupMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'SOUP',
                 'active' => false,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/soup-mushroom.jpg'
             ],
             [
                 'title' => 'Суп Том Ям куриный / Tom kha Yam chicken soup / ต้มยำไก่',
