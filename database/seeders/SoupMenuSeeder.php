@@ -79,7 +79,7 @@ class SoupMenuSeeder extends Seeder
                 'image' => 'menu-images/soup-mushroom.jpg'
             ],
             [
-                'title' => 'Суп Том Ям куриный / Tom kha Yam chicken soup / ต้มยำไก่',
+                'title' => 'Суп Том Ям куриный / Tom Yam chicken soup / ต้มยำไก่',
                 'description' => 'Кисло-острый суп на основе куриного бульона и кокосового молока с курицей',
                 'price' => 120,
                 'cuisine_id' => 'THAI',
@@ -88,7 +88,7 @@ class SoupMenuSeeder extends Seeder
                 'image' => 'menu-images/soup-tom-kha.jpg'
             ],
             [
-                'title' => 'Суп Том Ям с креветками / Shrimp Tom kha Yam soup / ต้มข่ากุ้ง',
+                'title' => 'Суп Том Ям с креветками / Tom Yam shrimp soup / ต้มยำทะเลต้มยำ',
                 'description' => 'Кисло-острый суп на основе куриного бульона и кокосового молока с креветками',
                 'price' => 150,
                 'cuisine_id' => 'THAI',
@@ -97,7 +97,7 @@ class SoupMenuSeeder extends Seeder
                 'image' => 'menu-images/soup-tom-kha.jpg'
             ],
             [
-                'title' => 'Суп Том Ям с морепродуктами / Shrimp Tom kha Yam soup / ต้มข่ากุ้ง',
+                'title' => 'Суп Том Ям с морепродуктами / Tom Yam seafood soup / ต้มยำทะเลต้มยำ',
                 'description' => 'Кисло-острый суп на основе куриного бульона и кокосового молока с рыбой или другими морепродуктами',
                 'price' => 150,
                 'cuisine_id' => 'THAI',
