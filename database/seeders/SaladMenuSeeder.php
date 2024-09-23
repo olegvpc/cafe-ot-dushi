@@ -88,15 +88,6 @@ class SaladMenuSeeder extends Seeder
                 'image' => 'menu-images/salad-papaya.jpeg'
             ],
             [
-                'title' => 'Салат Пад-Тай / Pad-Thai salad / สลัดผัดไทย',
-                'description' => 'Классический тайский салат на основе рисовой лапши',
-                'price' => 120,
-                'cuisine_id' => 'THAI',
-                'category_id'=> 'MAIN',
-                'active' => true,
-                'image' => 'menu-images/salad-pad-thai.jpg'
-            ],
-            [
                 'title' => 'Салат из крабовых палочек / Crab-sticks salad / สลัดปูอัด',
                 'description' => 'Салат из крабовых палочек с кукурузой, рисом и вареными яйцами - вкусная и очень популярная закуска.',
                 'price' => 95,

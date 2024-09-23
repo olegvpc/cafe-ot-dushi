@@ -23,7 +23,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-varenik-cabbage.jpg'
             ],
             [
                 'title' => 'Вареники с картофелем / Dumplings with potatoes / เกี๊ยวกับมันฝรั่ง',
@@ -32,7 +32,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-varenik-patato.jpg'
             ],
             [
                 'title' => 'Вареники с картофелем и грибами / Dumplings with potatoes and mushrooms / เกี๊ยวกับมันฝรั่งและเห็ด',
@@ -41,7 +41,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-varenik-patato.jpg'
             ],
             [
                 'title' => 'Вареники с клубникой / Dumplings with strawberries / เกี๊ยวกับสตรอเบอร์รี่',
@@ -59,7 +59,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'RUS',
                 'category_id'=> 'MAIN',
                 'active' => false,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-varenik-patato-cheese.jpg'
             ],
             [
                 'title' => 'Жареный рис с курицей / Fried rice with chicken / ข้าวผัดไก่',
@@ -185,7 +185,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'menu-images/main-pasta-carbonare.jpg'
+                'image' => 'menu-images/main-pasta-carbanare.jpg'
             ],
             [
                 'title' => 'Жареное филе рыбы с гарниром / Fried fish fillet with garnish / เนื้อปลาทอดกับเครื่องปรุง',

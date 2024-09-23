@@ -140,7 +140,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-tea-pot.jpeg'
+                'image' => 'menu-images/drink-tee-pot.jpeg'
             ],
             [
                 'title' => 'Кофе американо горячий / Hot americano coffee / กาแฟอเมริกาโน่ร้อน',
@@ -158,7 +158,7 @@ class DrinkMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DRINK',
                 'active' => true,
-                'image' => 'menu-images/drink-coffee-espresso.jpeg'
+                'image' => 'menu-images/drink-cofe-espresso.jpeg'
             ],
             [
                 'title' => 'Кофе латте горячий / Hot latte coffee / กาแฟลาเต้ร้อน',
