@@ -17,6 +17,51 @@ class MainMenuSeeder extends Seeder
         // images/no-image.jpeg
         $maines = [
             [
+                'title' => 'Вареники с капустой / Dumplings with cabbage / เกี๊ยวกับกะหล่ำปลี',
+                'description' => 'Вареники: Классическое русское бдюдо изветное во всм мире',
+                'price' => 110,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Вареники с картофелем / Dumplings with potatoes / เกี๊ยวกับมันฝรั่ง',
+                'description' => 'Вареники: Классическое русское бдюдо изветное во всм мире',
+                'price' => 110,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Вареники с картофелем и грибами / Dumplings with potatoes and mushrooms / เกี๊ยวกับมันฝรั่งและเห็ด',
+                'description' => 'Вареники: Классическое русское бдюдо изветное во всм мире',
+                'price' => 130,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Вареники с клубникой / Dumplings with strawberries / เกี๊ยวกับสตรอเบอร์รี่',
+                'description' => 'Вареники: Классическое русское бдюдо изветное во всм мире',
+                'price' => 180,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => false,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
+                'title' => 'Вареники с творогом / Dumplings with cottage cheese / เกี๊ยวกับคอทเทจชีส',
+                'description' => 'Вареники: Классическое русское бдюдо изветное во всм мире',
+                'price' => 180,
+                'cuisine_id' => 'RUS',
+                'category_id'=> 'MAIN',
+                'active' => false,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
                 'title' => 'Жареный рис с курицей / Fried rice with chicken / ข้าวผัดไก่',
                 'description' => 'Классическое тайское блюдо - основа жизни',
                 'price' => 120,

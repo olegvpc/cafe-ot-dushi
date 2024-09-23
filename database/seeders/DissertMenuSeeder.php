@@ -52,6 +52,15 @@ class DissertMenuSeeder extends Seeder
                 'image' => 'menu-images/dissert-tube.jpg'
             ],
             [
+                'title' => 'Зефир с манго / Marshmallow with mango / มาร์ชแมลโลว์กับมะม่วง',
+                'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
+                'price' => 30,
+                'cuisine_id' => 'ALL',
+                'category_id'=> 'DISSERT',
+                'active' => true,
+                'image' => 'images/no-image.jpeg'
+            ],
+            [
                 'title' => 'Трайфл Сникерс / Trifle Snickers / สนิกเกอร์เรื่องเล็ก',
                 'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
                 'price' => 99,
@@ -97,9 +106,9 @@ class DissertMenuSeeder extends Seeder
                 'image' => 'menu-images/dissert-panakota.jpg'
             ],
             [
-                'title' => 'Зефир с манго / Marshmallow with mango / มาร์ชแมลโลว์กับมะม่วง',
+                'title' => 'Трайфл Тирамису / Trifle Tiramisu / ไทรเฟิล ทีรามิสุ',
                 'description' => 'Кондитерские изделия изготовлены московским кондитером, проживающим в Паттае.',
-                'price' => 30,
+                'price' => 99,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DISSERT',
                 'active' => true,
@@ -112,7 +121,7 @@ class DissertMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DISSERT',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/dissert-icecream.jpeg'
             ],
             [
                 'title' => 'Мороженое Банана сплит / Ice cream Banana split / ไอศกรีมบานาน่าสปลิท',
@@ -121,7 +130,7 @@ class DissertMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'DISSERT',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/dissert-icecream-banana.jpeg'
             ],
         ];
         foreach ($disserts as $dish) {
