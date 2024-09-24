@@ -8,6 +8,12 @@
 
     <x-title>
         {{ __('Choise table for order / เลือกโต๊ะสั่งได้')}}
+
+        <x-slot name='right'>
+            <x-button-link href="{{ route('user.report') }}">
+                {{ __('Order Report')}}
+            </x-button-link>
+        </x-slot>
     </x-title>
 
 

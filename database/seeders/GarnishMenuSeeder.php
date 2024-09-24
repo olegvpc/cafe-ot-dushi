@@ -22,7 +22,7 @@ class GarnishMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'GARNISH',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/garnish-potato-mush.jpeg'
             ],
             [
                 'title' => 'Отварной рис / Сooked rice / ข้าว',
@@ -31,7 +31,7 @@ class GarnishMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'GARNISH',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/garnish-rice.jpeg'
             ],
             [
                 'title' => 'Картофель фри / French fries / เฟรนช์ฟรายส์',
@@ -40,7 +40,7 @@ class GarnishMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'GARNISH',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/garnish-potato-free.jpeg'
             ],
             [
                 'title' => 'Жареный картофель / Fried potatoes / มันฝรั่งทอด',
@@ -49,7 +49,7 @@ class GarnishMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'GARNISH',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/garnish-potato-fried.jpeg'
             ],
             [
                 'title' => 'Гречка / Buckwheat / บัควีท',
@@ -58,7 +58,7 @@ class GarnishMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'GARNISH',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/garnish-grecha.jpeg'
             ],
         ];
         foreach ($garnishes as $dish) {

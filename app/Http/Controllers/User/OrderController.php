@@ -14,6 +14,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 
 class OrderController extends Controller
@@ -242,6 +243,8 @@ class OrderController extends Controller
                 $payment->amount_in = $totalAmount;
                 $payment->creator_id = Auth::user()->id;
                 $payment->save();
+
+                Log::info('Order: ' . $order->id . 'created by user: ' . Auth::user()->name);
 
                 DB::commit();
             });

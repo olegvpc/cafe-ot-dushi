@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 
 class PaymentController extends Controller
@@ -189,22 +190,22 @@ class PaymentController extends Controller
                 $payment->creator_id = Auth::user()->id;
                 $payment->image = $imagePath;
 
-                if ($amountOut = $validated['amount_out']?? null) {
+                if ($amountOut = $validated['amount_out'] ?? null) {
                     $payment->amount_out = $amountOut;
                 }
 
-                if ($amountIn = $validated['amount_in']?? null) {
+                if ($amountIn = $validated['amount_in'] ?? null) {
                     $payment->amount_in = $amountIn;
                 }
 
                 $payment->save();
 
-                if ($creditorId = $validated['creditor_id']?? null) {
+                if ($creditorId = $validated['creditor_id'] ?? null) {
                     $creditor->user_id = $creditorId;
                     $creditor->payment_id = $payment->id;
                     $creditor->save();
                 }
-
+                Log::info('Payment: ' . $payment->id . 'amount_in: ' . $payment->amount_in . 'amount_out: ' . $payment->amount_out . 'created by user: ' . Auth::user()->name);
 
                 DB::commit();
             });
@@ -239,7 +240,7 @@ class PaymentController extends Controller
      */
     public function update(Request $request, string $paymentId)
     {
-        $errorNoAmounts = $request->input('amount_out') === NULL && $request->input('amount_in') === NULL;
+        $errorNoAmounts = $request->input('amount_out') === null && $request->input('amount_in') === null;
         $errorTwoAmounts = $request->input('amount_out') !== NULL && $request->input('amount_in') !== NULL;
         $validated = $request->validate([
             'title' => ['required', 'string'],
@@ -293,6 +294,11 @@ class PaymentController extends Controller
                 }
 
                 $payment->update();
+
+                Log::info(
+                    'Payment: ' . $payment->id . 'amount_in: ' . $payment->amount_in . 'amount_out: ' . $payment->amount_out . 'updated by user: ' . Auth::user(
+                    )->name
+                );
 
                 DB::commit();
             });

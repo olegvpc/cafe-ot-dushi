@@ -17,14 +17,14 @@
                     </div>
                     <div class="nav-link">
                         <a class="nav-link {{ Route::is('user.orders*') ? 'active' : '' }}" href="{{ route('user.orders.index') }}">
-                            {{ __("Get Order") }}
+                            {{ __("Order Menu") }}
                         </a>
                     </div>
-                    <div class="nav-link">
-                        <a class="nav-link" href="{{ route('user.report') }}">
-                            {{ __("Orders Report") }}
-                        </a>
-                    </div>
+{{--                    <div class="nav-link">--}}
+{{--                        <a class="nav-link" href="{{ route('user.report') }}">--}}
+{{--                            {{ __("Orders Report") }}--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
                     <div class="nav-link">
                         <a class="nav-link" href="{{ route('user.payments.index') }}">
                             {{ __("Payments") }}
