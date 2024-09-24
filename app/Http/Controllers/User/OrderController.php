@@ -244,11 +244,12 @@ class OrderController extends Controller
                 $payment->creator_id = Auth::user()->id;
                 $payment->save();
 
-                Log::info('Order: ' . $order->id . 'created by user: ' . Auth::user()->name);
-
+                Log::info('Store Order: ' . $order->id . '; amount_in: ' . $payment->amount_in . '; created by user: ' . Auth::user()->name);
+                Log::info('Store Payment: ' . $payment->id . 'amount_in: ' . $payment->amount_in . 'created by user: ' . Auth::user()->name);
                 DB::commit();
             });
         } catch (\Exception $e) {
+            Log::alert('Store Order: ' . $order->id . '; Error: ' . $e->getMessage());
             throw $e;
         }
 
@@ -269,9 +270,7 @@ class OrderController extends Controller
             return redirect()->route('user.orders.index');
         }
 
-        // dd($tableId, $table, $order);
         return view('user.orders.cancel', compact(['tableId', 'order']));
-        // return 'Страница с формой комментария';
     }
 
     /**
@@ -322,6 +321,7 @@ class OrderController extends Controller
                 DB::commit();
             });
         } catch (\Exception $e) {
+            Log::alert('Delete Order: ' . $order->id . '; Error: ' . $e->getMessage());
             throw $e;
         }
 

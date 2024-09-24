@@ -130,9 +130,15 @@ class PaymentController extends Controller
 
                 $payment->save();
 
+                Log::info(
+                    'Create Payment Previous: ' . $payment->id . '; amount_in: ' . $payment->amount_in . '; amount_out: ' . $payment->amount_out . '; created by user: ' . Auth::user(
+                    )->name
+                );
+
                 DB::commit();
             });
         } catch (\Exception $e) {
+            Log::alert('Create Payment Previous: ' . $payment->id . '; Error: ' . $e->getMessage());
             throw $e;
         }
         return $payment;
@@ -145,7 +151,6 @@ class PaymentController extends Controller
     public function create()
     {
         $creditors = getAllCreditors();
-//        dd($creditors);
         return view('user.payments.create', compact(['creditors']));
     }
 
@@ -154,7 +159,6 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->input('amount_out'));
         $errorNoAmounts = $request->input('amount_out') === NULL && $request->input('amount_in') === NULL;
         $errorTwoAmounts = $request->input('amount_out') !== NULL && $request->input('amount_in') !== NULL;
         $validated = $request->validate([
@@ -205,11 +209,12 @@ class PaymentController extends Controller
                     $creditor->payment_id = $payment->id;
                     $creditor->save();
                 }
-                Log::info('Payment: ' . $payment->id . 'amount_in: ' . $payment->amount_in . 'amount_out: ' . $payment->amount_out . 'created by user: ' . Auth::user()->name);
+                Log::info('Store Payment: ' . $payment->id . 'amount_in: ' . $payment->amount_in . 'amount_out: ' . $payment->amount_out . 'created by user: ' . Auth::user()->name);
 
                 DB::commit();
             });
         } catch (\Exception $e) {
+            Log::alert('Store Payment: ' . $payment->id . '; Error: ' . $e->getMessage());
             throw $e;
         }
         alert(__("Payment: $payment->id! created"), 'primary');
@@ -296,13 +301,14 @@ class PaymentController extends Controller
                 $payment->update();
 
                 Log::info(
-                    'Payment: ' . $payment->id . 'amount_in: ' . $payment->amount_in . 'amount_out: ' . $payment->amount_out . 'updated by user: ' . Auth::user(
+                    'Update Payment: ' . $payment->id . '; amount_in: ' . $payment->amount_in . '; amount_out: ' . $payment->amount_out . '; updated by user: ' . Auth::user(
                     )->name
                 );
 
                 DB::commit();
             });
         } catch (\Exception $e) {
+            Log::alert('Update Payment: ' . $payment->id . '; Error: ' . $e->getMessage());
             throw $e;
         }
         alert(__("Payment: $payment->id Edited"), 'primary');
