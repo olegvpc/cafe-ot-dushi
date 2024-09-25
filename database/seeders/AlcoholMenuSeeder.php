@@ -211,7 +211,7 @@ class AlcoholMenuSeeder extends Seeder
                 'price' => 90,
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
-                'active' => false,
+                'active' => true,
                 'image' => 'menu-images/alcohol-vodka-kulov.jpeg'
             ],
             [
@@ -221,7 +221,7 @@ class AlcoholMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'ALCOHOL',
                 'active' => false,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/alcohol-mohito.jpeg'
             ],
         ];
         foreach ($alcohols as $dish) {

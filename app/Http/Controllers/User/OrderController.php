@@ -245,7 +245,7 @@ class OrderController extends Controller
                 $payment->save();
 
                 Log::info('Store Order: ' . $order->id . '; amount_in: ' . $payment->amount_in . '; created by user: ' . Auth::user()->name);
-                Log::info('Store Payment: ' . $payment->id . 'amount_in: ' . $payment->amount_in . 'created by user: ' . Auth::user()->name);
+                Log::info('Store Payment: ' . $payment->id . '; amount_in: ' . $payment->amount_in . '; created by user: ' . Auth::user()->name);
                 DB::commit();
             });
         } catch (\Exception $e) {

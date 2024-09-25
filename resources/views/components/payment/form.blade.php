@@ -6,14 +6,14 @@
 <x-form {{ $attributes->merge([
 	'method'=>'GET'
 ]) }}>
-	<x-form-item>
+	<x-form-item class="{{ !(Auth::user()->admin) ? 'd-none' : ''}}">
 		<x-label required>{{ __('Title of payment') }}</x-label>
 		<x-input name="title" value="{{ $payment->title ?? ''}}" autofocus />
 
 		<x-error name='title' />
 	</x-form-item>
 
-	<x-form-item>
+	<x-form-item class="{{ !(Auth::user()->admin) ? 'd-none' : ''}}">
 		<x-label required>{{ __('Description') }}</x-label>
         <x-textarea rows="1" name="description">{{$payment->description?? ''}}</x-textarea>
 
@@ -35,7 +35,7 @@
         <x-error name='image'/>
     </x-form-image>
 
-    <x-form-item>
+    <x-form-item class="{{ !(Auth::user()->admin) ? 'd-none' : ''}}">
         <x-checkbox type="checkbox" id="payoutCheckbox" name="payout-check" checked>
             <span id="checkbox_title">{{__('Amount out / Расход / การชำระเงิน')}}</span>
         </x-checkbox>
@@ -43,9 +43,9 @@
         <x-error name='payout-check' />
     </x-form-item>
 {{--    show or input for momey out or input for money in--}}
-    <x-form-item-row id="amount_out_item">
+    <x-form-item-row class="{{ !(Auth::user()->admin) ? 'd-none' : ''}}" id="amount_out_item">
         <x-label class="text-danger m-1">{{ __('Amount OUT / Расход / การชำระเงิน') }}</x-label>
-        <input class="form-control" required id="input_amount_out" name="amount_out" type="number" value="{{ $payment->amount_out ?? ''}}" />
+        <input class="form-control" {{ Auth::user()->admin ? 'required' : ''}} id="input_amount_out" name="amount_out" type="number" value="{{ $payment->amount_out ?? ''}}" />
 
         <x-error name='amount_out' />
     </x-form-item-row>
@@ -57,7 +57,7 @@
         <x-error name='amount_in' />
     </x-form-item-row>
 
-    <x-form-item>
+    <x-form-item class="{{ !(Auth::user()->admin) ? 'd-none' : ''}}">
         <x-checkbox type="checkbox" id="creditorCheckbox" name="creditor_check">
             <span id="checkbox_creditor">{{__('Creditor / Кредитор / เจ้าหนี้')}}</span>
         </x-checkbox>

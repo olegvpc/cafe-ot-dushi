@@ -31,7 +31,7 @@ class StarterMenuSeeder extends Seeder
                 'cuisine_id' => 'ALL',
                 'category_id'=> 'STARTER',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/starters-onion-rings.jpg'
             ],
             [
                 'title' => 'Морепродукты в кляре / Seafood in batter / อาหารทะเลในแป้ง',

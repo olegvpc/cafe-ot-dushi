@@ -21,7 +21,7 @@
         @endisset
         <span class="badge rounded-pill fs-6 {{ $payment->amount_in ? 'bg-success' : 'bg-danger' }}">
             {{ $payment->amount_in ? $payment->amount_in : '-' . $payment->amount_out }}</span>
-        <a class="btn btn-warning btn-sm d-flex align-items-center {{ !(Auth::user()->admin) ? 'disabled' : '' }}"
+        <a class="btn  btn-sm d-flex align-items-center {{$payment->updator_id ? 'btn-info' : 'btn-warning'}}"
            href="{{ route('user.payments.edit', $payment->id) }}">
             {{ __('Edit') }}
         </a>

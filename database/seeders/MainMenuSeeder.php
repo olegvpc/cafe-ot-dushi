@@ -86,7 +86,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-fried-rice-shrim.jpg'
             ],
             [
                 'title' => 'Жареный рис с морепродуктами / Fried rice with seafood / ข้าวผัดทะเล',
@@ -95,7 +95,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-fried-rice-seafood.jpeg'
             ],
             [
                 'title' => 'Куриный стейк с гарниром / Chicken stack / กองไก่',
@@ -161,15 +161,6 @@ class MainMenuSeeder extends Seeder
                 'image' => 'menu-images/main-pilmeni-pork.jpg'
             ],
             [
-                'title' => 'Жареный рис с криветками / Fried rice with shrimp / ข้าวผัดกุ้ง',
-                'description' => 'Жареный рис с креветками и овощами, по-тайски. Очень полезное и сытная еда',
-                'price' => 110,
-                'cuisine_id' => 'THAI',
-                'category_id'=> 'MAIN',
-                'active' => true,
-                'image' => 'menu-images/main-fried-rice-shrim.jpg'
-            ],
-            [
                 'title' => 'Голубцы / Golubtsi (cabbage meat rolls) / โกลุบซี',
                 'description' => 'Наши голубцы всем голубцам голубцы. Обязательно нужно попробовать',
                 'price' => 150,
@@ -221,7 +212,7 @@ class MainMenuSeeder extends Seeder
                 'cuisine_id' => 'THAI',
                 'category_id'=> 'MAIN',
                 'active' => true,
-                'image' => 'images/no-image.jpeg'
+                'image' => 'menu-images/main-pad-thai-pork.jpeg'
             ],
             [
                 'title' => 'Чебурек с курицей / Cheburek with chicken / กับไก่',
