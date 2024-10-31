@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
                 DB::commit();
             });
         } catch (\Exception $e) {
+            DB::rollBack();
             throw $e;
         }
     }
